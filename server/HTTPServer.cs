@@ -86,8 +86,6 @@ namespace HttpServer.framework.core
                 var request = context.Request;
                 var response = context.Response;
 
-                //Console.WriteLine($"Пришел запрос: {request.Url}");
-
                 string path = request.Url.LocalPath;
                 string prefix = $"/{settings.Path}";
                 string relativePath = path.Substring(prefix.Length);
@@ -96,18 +94,28 @@ namespace HttpServer.framework.core
                 {
                     relativePath = "/search.html";
                 }
+                else if (relativePath == "/satisfactory")
+                {
+                    relativePath = "/copyfactory.html";
+                }
+                else if (relativePath == "/steam")
+                {
+                    relativePath = "/steam.html";
+                }
 
                 string filePath = Directory.GetCurrentDirectory() + $"/static{relativePath}";
-                //Console.WriteLine($"Ищу файл: {filePath}");
-
                 FileInfo fileInfo = new FileInfo(filePath);
-                //Console.WriteLine($"Существует: {fileInfo.Exists}");
 
                 if (!fileInfo.Exists)
                 {
                     response.StatusCode = 404;
-                    filePath = Directory.GetCurrentDirectory() + $"/static/404.html";
+                    relativePath = "/404.html";
+                    filePath = Directory.GetCurrentDirectory() + $"/static{relativePath}";
+
+                    fileInfo = new FileInfo(filePath);
                 }
+
+                
 
                 switch (fileInfo.Extension)
                 {
