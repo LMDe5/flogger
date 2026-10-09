@@ -23,13 +23,13 @@ namespace HttpServer.framework.core
             string jsonStrings = File.ReadAllText("settings.json");
             settings = JsonSerializer.Deserialize<Settings>(jsonStrings);
 
-            if(settings == null)
+            if (settings == null)
             {
                 Console.WriteLine("не смогли считать settings.json");
                 return;
             }
 
-            string prefix = $"http://{settings.Host}:{settings.Port}/{settings.Path}/";
+            string prefix = $"http://{settings.Host}:{settings.Port}/";
 
             server.Prefixes.Add(prefix);
         }
@@ -83,12 +83,19 @@ namespace HttpServer.framework.core
                     break;
                 }
 
+
+
                 var request = context.Request;
                 var response = context.Response;
 
                 string path = request.Url.LocalPath;
                 string prefix = $"/{settings.Path}";
                 string relativePath = path.Substring(prefix.Length);
+
+                if (relativePath == "/Login_Form")
+                {
+                    relativePath = "/Login_Form/login.html";
+                }
 
                 if (string.IsNullOrEmpty(relativePath) || relativePath == "/")
                 {
@@ -103,19 +110,44 @@ namespace HttpServer.framework.core
                     relativePath = "/steam.html";
                 }
 
+
                 string filePath = Directory.GetCurrentDirectory() + $"/static{relativePath}";
                 FileInfo fileInfo = new FileInfo(filePath);
+
+
+                if (fileInfo.Extension == "")
+                {
+                    string[] extensions = { ".html", ".png" };
+                    foreach (string extension in extensions)
+                    {
+                        if (File.Exists(filePath + extension))
+                        {
+                            filePath += extension;
+                            fileInfo = new FileInfo(filePath);
+                            break;
+                        }
+                    }
+                }
+
+                if (!fileInfo.Exists)
+                {
+                    string staticRoot = Directory.GetCurrentDirectory() + "/static";
+                    string[] hits = Directory.GetFiles(staticRoot, Path.GetFileName(filePath), SearchOption.AllDirectories);
+
+                    if (hits.Length > 0)
+                    {
+                        filePath = hits[0];
+                        fileInfo = new FileInfo(filePath);
+                    }
+                }
 
                 if (!fileInfo.Exists)
                 {
                     response.StatusCode = 404;
                     relativePath = "/404.html";
                     filePath = Directory.GetCurrentDirectory() + $"/static{relativePath}";
-
                     fileInfo = new FileInfo(filePath);
                 }
-
-                
 
                 switch (fileInfo.Extension)
                 {
@@ -149,7 +181,7 @@ namespace HttpServer.framework.core
                 await output.WriteAsync(buffer);
                 await output.FlushAsync();
 
-                Console.WriteLine("Запрос отправлен");
+                Console.WriteLine($"Запрос отправлен: {relativePath}");
                 response.Close();
             }
         }

@@ -1,0 +1,1040 @@
+<html>
+
+    <head>
+
+        <style>
+
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body
+            {
+                background-color:rgb(37, 51, 70);
+                margin: 0; 
+                padding: 0
+            }
+
+            .header
+            {
+                width: 100%;
+                padding: 0 16px;
+
+                background-color: #171a21;
+            }
+
+            .headerContainer
+            {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .headerTop
+            {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                
+                padding: 10px 0 0 0;
+                font-size: 12px;
+            }
+
+            .line
+            {
+                display: inline-block;
+                width: 0.5px;
+                height: 12px;
+                align-self: center;
+
+                margin: 0 15px;
+
+                background-color: #c0c0c2;
+            }
+
+            .arrowDown
+            {
+                margin-left: 4px;
+                display: block;
+            }
+
+            .installButton
+            {
+                display: flex;
+                align-items: center;
+
+                gap: 6px;
+                padding: 6px 12px;
+                color: #ffffff;
+                
+                background-color: #5c7e10; 
+                text-decoration: none;
+            }
+
+            .installButton img
+            {
+                display: block;
+                width: 14px;
+                height: 14px;
+
+                filter: brightness(0) invert(1);
+            }
+
+            .enterButton, .languageButton
+            {
+                display: flex;
+                align-items: center;
+                
+                gap: 4px;
+                
+                color: #b8b6b4; 
+                text-decoration: none;
+            }
+            .enterButton
+            {
+                margin-left: 15px;
+            }
+            .languageButton
+            {
+                margin-left: 0;
+            }
+
+            .headerBottom
+            {
+                display: flex;
+                align-items: center;
+
+                padding-bottom: 40px;
+                gap: 40px;
+            }
+
+            .headerBottomLogo
+            {
+                display: flex;
+                align-items: center;
+
+                gap: 10px;
+                font-size: 24px;
+                
+                color: #ffffff;
+                text-decoration: none; 
+            }
+            
+            .headerBottomLogo img 
+            {
+                display: block;
+
+                width: 144px;
+                height: auto;
+            }
+            
+            .headerBottomNavigation
+            {
+                display: flex;
+                gap: 20px;
+                font-size: 16px;
+            }
+            .headerBottomNavigation a.active
+            {
+                color: #1a9fff;
+                padding-bottom: 4px;
+
+                border-bottom: 2px solid #1a9fff;
+            }
+            
+            .headerBottomNavigation a
+            {
+                color: #ffffff;
+                text-decoration: none;
+            }
+            
+            .headerBottomNavigation a:hover
+            {
+                color: #ffffff;
+            }
+
+            .subHeader
+            {
+                width: 100%;
+                padding: 0 16px;
+
+                background-color: #1b2838;
+                border-bottom: 1.5px solid #01050f;
+            }
+            .subHeaderContainer
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 10px 0 4px 0;
+            }
+
+            .subHeaderLinks
+            {
+                display: flex;
+                gap: 25px;
+                font-size: 14px;
+            }
+            .subHeaderLinks a
+            {
+                display: flex;
+                align-items: center;
+                
+                gap: 5px;
+                
+                color: #ffffff;
+
+                text-decoration: none;
+            }
+            .arrowDown2
+            {
+                display: block;
+                margin-left: 2px;
+                transition: transform 0.2s;
+            }
+
+            .search
+            {
+                display: flex;
+                flex: 1;
+                justify-content: flex-end;
+                align-items: stretch; 
+            }
+            .search input
+            {
+                width: 100%;
+                max-width: 450px;
+
+                padding: 8px 15px;
+                font-size: 14px;
+
+                color: #ffffff;
+                background-color: #4c5860;
+
+                border: none;
+                outline: none;
+
+                border-radius: 3px;
+            }
+            .search input::placeholder
+            {
+                color: #ffffff;
+                opacity: 1;
+            }
+            .search button
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 36px;
+
+                background-color: #1a9fff;
+
+                border: none;
+                outline: none;
+
+                border-radius: 3px;
+            }
+            .search button svg
+            {
+                width: 24px;
+                height: 24px;
+                fill: #ffffff;
+            }
+            
+            .centerContainer
+            {
+                display: flex;
+                justify-content: center;
+
+                padding: 60px 60px 120px 60px;
+
+                background-image: 
+                    url('https://community.akamai.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg');
+                
+                background-size: cover;
+                background-position: center;
+
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+            }
+
+            .loginContainer
+            {
+                width: 100%;
+                max-width: 900px; 
+                margin: 0 auto;
+            }
+
+            .loginText
+            {
+                font-size: 32px;
+                font-weight: 500;
+
+                margin: 30px 0 50px 30px;
+                
+                color: #ffffff;
+            }
+
+            .loginPanel
+            {
+                display: flex;
+                gap: 60px; 
+
+                padding: 30px 60px; 
+                border-radius: 3px;
+
+                background-color: #181a21;
+            }
+
+            .loginForm
+            {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .inputGroup
+            {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .inputGroup label
+            {
+                font-size: 12px;
+                text-transform: uppercase;
+
+                color: #67c1f5;
+            }
+            .inputGroup label.passwordLabel
+            {
+                color: #8f98a0;
+            }
+            .inputGroup input
+            {
+                width: 100%; 
+                padding: 12px;
+                font-size: 16px;
+
+                border: none;
+                border-radius: 2px;
+
+                background-color: #32353c;
+                color: #ffffff;
+            }
+
+            .checkBoxGroup
+            {
+                display: flex;
+                align-items: center;
+
+                width: 100%;
+                margin-left: 0;
+                padding-left: 0;
+
+                gap: 10px;
+                margin-top: 5px;
+            }
+            .checkBoxGroup input
+            {
+                position: relative; 
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+
+                appearance: none;
+                -webkit-appearance: none;
+
+                border-radius: 2px;
+                background-color: #32353c; 
+                border: 1.5px solid #67c1f5; 
+            }
+            .checkBoxGroup input:checked::after
+            {
+                content: "✓";
+                position: absolute;
+                color: #67c1f5;
+                font-size: 12px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                line-height: 1;
+            }
+            .checkBoxGroup label
+            {
+                font-size: 15px;
+
+                cursor: pointer;
+                color: #b8b6b4;
+            }
+            
+            .loginButton
+            {
+                align-self: center;
+                width: 250px;  
+
+                margin-top: 15px;
+                padding: 14px;
+                font-size: 16px;
+                font-weight: bold;
+
+                border-radius: 2px;
+                border: none;
+
+                color: #ffffff;
+                background: linear-gradient(to right, #47bfff 5%, #1a44c2 95%);
+            }
+
+            .helpLink
+            {
+                text-align: center;
+
+                font-size: 13px;
+                margin-top: 25px;
+
+                color: #8f98a0;
+            }
+
+            .helpLink:hover
+            {
+                color: #ffffff;
+            }
+
+            .loginQR
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                text-align: center;
+
+                width: 220px; 
+            }
+
+            .qrTopText
+            {
+                align-self: flex-start; 
+
+                font-size: 12px;
+                margin-bottom: 5px;
+                margin-left: 0px;
+
+                color: #67c1f5;
+            }
+
+            .qrSpace
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 220px;
+                height: 220px;
+
+                border-radius: 10px;
+                padding: 20px;
+                overflow: hidden;
+
+                background-color: #ffffff;
+            }
+            .qrSpace img
+            {
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                border-radius: 2px;
+            }
+
+            .qrBottomText
+            {
+                font-size: 14px;
+                margin-top: 10px;
+
+                color: #8f98a0;
+            }
+            .qrBottomText a
+            {
+                color: #8f98a0;
+            }
+
+            footer
+            {
+                width: 100%;
+                padding: 60px 16px 80px 16px;
+
+                background-color: #171a21;
+            }
+
+            .footerContainer
+            {
+                max-width: 1350px;
+                margin: 0 auto;
+            }
+
+            .footerTop
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin-bottom: 50px;
+                gap: 80px
+            }
+
+            .footerTopLeft
+            {
+                text-align: center;
+            }
+
+            .footerTopLeft h2
+            {
+                font-size: 26px;
+                font-weight: 500;
+                margin-bottom: 15px;
+
+                color: #ffffff;
+            }
+
+            .createAccountButton
+            {
+                padding: 8px 20px;
+                font-size: 16px;
+
+                border: none;
+                border-radius: 3px;
+
+                color: #ffffff;
+                background-color: #2d6491;
+            }
+
+            .footerTopRight
+            {
+                text-align: center;
+            }
+
+            .footerTopRight p
+            {
+                font-size: 16px;
+                line-height: 1.5;
+
+                color: #8f98a0;
+            }
+
+            .footerTopRight a
+            {
+                color: #8f98a0;
+            }
+
+            .footerBottom
+            {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+            .footerColumnBrand
+            {
+                flex: 1.5;
+                margin-right: 80px;
+            }
+
+            .footerColumnBrand p
+            {
+                font-size: 12px;
+                line-height: 1.3;
+                margin-bottom: 20px;
+
+                color: #8f98a0;
+            } 
+
+            .footerLogos
+            {
+                display: flex;
+                align-items: center;
+
+                gap: 40px;
+                margin-bottom: 25px;
+            }
+            
+            .steamLogo
+            {
+                height: 40px;
+                width: auto;
+            }
+            .valveLogo
+            {
+                height: 28px;
+                width: auto;
+            }
+
+            .footerSocials
+            {
+                display: flex;
+                gap: 15px;
+            }
+
+            .footerSocials a
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footerSocials svg
+            {
+                width: 28px;
+                height: 28px;
+
+                fill: #8f98a0;
+            }
+
+            .footerColumnLinks
+            {
+                flex: 1;
+            }
+
+            .footerColumnLinks h3
+            {
+                margin-bottom: 15px;
+                font-size: 16px;
+                font-weight: 500;
+                
+                color: #ffffff;
+            }
+
+            .footerColumnLinks ul
+            {
+                list-style: none;
+            }
+
+            .footerColumnLinks li
+            {
+                margin-bottom: 10px;
+            }
+
+            .footerColumnLinks a
+            {
+                font-size: 14px;
+
+                color: #8f98a0;
+                text-decoration: none;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <header class="header">
+
+            <div class="headerContainer">
+
+                <div class="headerTop">
+                    <a class="installButton" href="https://store.steampowered.com/about/?snr=1_60_4__global-header">
+                        <img src="https://img.icons8.com/?size=160&id=S0ihA6Er6bQv&format=png" alt="downloadButton">
+                        Установить Steam
+                    </a>
+                    <a class="enterButton" href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3Dlogin%252F%253Fredir%253D%2526redir_ssl%253D1%2526snr%253D1_4_4__global-header%26redir_ssl%3D1&redir_ssl=1&snr=1_60_4__global-header">
+                        вход
+                    </a>
+
+                    <span class="line"></span>
+
+                    <a class="languageButton" href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header&redir_ssl=1">
+                        язык
+                        <svg class="arrowDown" viewBox="0 0 10 6" width="8" height="5" fill="#b8b6b4">
+                            <path d="M0 0 L5 6 L10 0 Z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="headerBottom">
+                    <a class="headerBottomLogo" href="https://store.steampowered.com/?snr=1_60_4__global-header">
+                        <img src="https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="Steam Logo">
+                    </a>
+
+                    <nav class="headerBottomNavigation">
+                        <a class="active" href="https://store.steampowered.com/?snr=1_60_4__global-header">
+                            МАГАЗИН
+                        </a>
+                        <a href="https://steamcommunity.com/">
+                            СООБЩЕСТВО
+                        </a>
+                        <a href="https://store.steampowered.com/about/?snr=1_60_4__global-header">
+                            ИНФОРМАЦИЯ
+                        </a>
+                        <a href="https://help.steampowered.com/ru/">
+                            ПОДДЕРЖКА
+                        </a>
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="subHeader">
+
+            <div class="subHeaderContainer">
+
+                <nav class="subHeaderLinks">
+                    <a href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header&redir_ssl=1">
+                        Просмотр
+                        <svg class="arrowDown2" viewBox="0 0 10 6" width="10" height="6" 
+                            fill="none" stroke="#b8b6b4" stroke-width="1.5" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 1 L5 5 L9 1"/>
+                        </svg>
+                    </a>
+                    <a href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header&redir_ssl=1">
+                        Рекомендации
+                        <svg class="arrowDown2" viewBox="0 0 10 6" width="10" height="6" 
+                            fill="none" stroke="#b8b6b4" stroke-width="1.5" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 1 L5 5 L9 1"/>
+                        </svg>
+                    </a>
+                    <a href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header&redir_ssl=1">
+                        Категории
+                        <svg class="arrowDown2" viewBox="0 0 10 6" width="10" height="6" 
+                            fill="none" stroke="#b8b6b4" stroke-width="1.5" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 1 L5 5 L9 1"/>
+                        </svg>
+                    </a>
+                    <a href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header&redir_ssl=1">
+                        Устройства
+                        <svg class="arrowDown2" viewBox="0 0 10 6" width="10" height="6" 
+                            fill="none" stroke="#b8b6b4" stroke-width="1.5" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 1 L5 5 L9 1"/>
+                        </svg>
+                    </a>
+                    <a href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header&redir_ssl=1">
+                        Способы игры
+                        <svg class="arrowDown2" viewBox="0 0 10 6" width="10" height="6" 
+                            fill="none" stroke="#b8b6b4" stroke-width="1.5" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 1 L5 5 L9 1"/>
+                        </svg>
+                    </a>
+                    <a href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header&redir_ssl=1">
+                        Особые разделы
+                        <svg class="arrowDown2" viewBox="0 0 10 6" width="10" height="6" 
+                            fill="none" stroke="#b8b6b4" stroke-width="1.5" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 1 L5 5 L9 1"/>
+                        </svg>
+                    </a>
+                </nav>
+
+                <div class="search">
+                    <input type="text" placeholder="Поиск по магазину">
+                    <button>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="centerContainer">
+            <div class="loginContainer">
+                <h2 class="loginText">
+                    Вход
+                </h2>
+
+                <div class="loginPanel">
+
+                    <form class="loginForm">
+
+                        <div class="inputGroup">
+                            <label>
+                                ВОЙДИТЕ, ИСПОЛЬЗУЯ ИМЯ АККАУНТА
+                            </label>
+                            <input type="text">
+                        </div>
+                        <div class="inputGroup">
+                            <label class="passwordLabel">
+                                ПАРОЛЬ
+                            </label>
+                            <input type="password">
+                        </div>
+
+                        <div class="checkBoxGroup">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">
+                                Запомнить меня
+                            </label>
+                        </div>
+
+                        <button class="loginButton" type="submit">
+                            Войти
+                        </button>
+
+                        <a class="helpLink" href="https://help.steampowered.com/wizard/HelpWithLogin?redir=https%3A%2F%2Fstore.steampowered.com%2Flogin%2F%3Fredir%3Dlogin%252F%253Fredir%253D%2526redir_ssl%253D1%2526snr%253D1_4_4__global-header%26redir_ssl%3D1">
+                            Помогите, я не могу войти в аккаунт
+                        </a>
+
+                    </form>
+
+                    <div class="loginQR">
+
+                        <span class="qrTopText">
+                            ИЛИ QR-КОД
+                        </span>
+
+                        <div class="qrSpace">
+
+                            <img id="qrImage" src="" alt="qrCode">
+
+                        </div>
+
+                        <p class="qrBottomText">
+                            Используйте 
+                            <a href="https://store.steampowered.com/mobile">
+                                мобильное приложение Steam
+                            </a>
+                            , чтобы войти с помощью QR-кода
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+
+            <div class="footerContainer">
+
+                <div class="footerTop">
+
+                    <div class="footerTopLeft">
+                        <h2>
+                            Первый раз в стим?
+                        </h2>
+                        <button class="createAccountButton">
+                            Coздать аккаунт
+                        </button>
+                    </div>
+                    <div class="footerTopRight">
+                        <p>
+                            Это бесплатно и просто. Откройте для себя<br>
+                            тысячи игр, в которые можно играть с<br>
+                            миллионами новых друзей.
+                            <a href="https://store.steampowered.com/about">
+                                Узнайте больше
+                                <br>
+                                о Steam
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="footerBottom">
+
+                    <div class="footerColumnBrand">
+                        <div class="footerLogos">
+                            <img src="https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="Steam" class="steamLogo">
+                            <img src="https://vectorseek.com/wp-content/uploads/2023/09/Valve-Software-Logo-Vector.svg-.png" alt="VALVe" class="valveLogo">
+                        </div>
+                        <p>
+                            © 2026 Valve Corporation. Все права защищены.
+                            <br>
+                            Все торговые марки являются собственностью
+                            <br>
+                            соответствующих владельцев в США и других странах.
+                            <br>
+                            Все цены указаны с учетом НДС (если применимо).
+                        </p>
+                        <div class="footerSocials">
+                            <a href="https://www.youtube.com/@Steam">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="#8f98a0">
+                                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                                </svg>
+                            </a>
+                            <a href="https://bsky.app/profile/steampowered.com">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="#8f98a0">
+                                    <path d="M5.769 3.529C8.375 5.15 11.174 8.56 12 10.92c.826-2.36 3.625-5.77 6.231-7.391 1.879-1.175 4.769-.975 4.769 1.786 0 1.132-.643 4.512-.98 5.294-.629 1.664-2.949 2.317-4.569 2.545 3.284.568 4.096 2.402 2.284 4.236-3.401 3.45-5.912-1.261-6.352-2.826-.041-.143-.07-.243-.086-.293-.016.05-.045.15-.086.293-.44 1.565-2.951 6.276-6.352 2.826-1.812-1.834-1-3.668 2.284-4.236-1.62-.228-3.94-.881-4.569-2.545C2.575 9.891 1.932 6.511 1.932 5.379c0-2.761 2.89-2.961 4.769-1.786z"/>
+                                </svg>
+                            </a>
+                            <a href="https://facebook.com/steam">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="#8f98a0">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com/steam">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="#8f98a0">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footerColumnLinks">
+                        <h3>
+                            STEAM
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="https://store.steampowered.com/about/?snr=1_44_44_">
+                                    O Steam
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/subscriber_agreement/?snr=1_44_44_">
+                                    Соглашение подписчика Steam
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://partner.steamgames.com/">
+                                    Steamworks
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://partner.steamgames.com/">
+                                    Распространение в Steam
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_">
+                                    Подарочные карты
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footerColumnLinks">
+                        <h3>
+                            VALVE
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="https://valvesoftware.com/about">
+                                    O Valve
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://valvesoftware.com/">
+                                    Вакансии
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/hardware/?snr=1_44_44_">
+                                    Оборудование
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/hardware_recycling/?snr=1_44_44_">
+                                    Переработка
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footerColumnLinks">
+                        <h3>
+                            ПРАВОВАЯ ИНФОРМАЦИЯ
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="https://store.steampowered.com/privacy_agreement/?snr=1_44_44_">
+                                    Конфиденциальность
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://help.steampowered.com/faqs/view/10BB-D27A-6378-4436">
+                                    Доступность
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/legal/?snr=1_44_44_">
+                                    Положения и политика
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/account/cookiepreferences/?snr=1_44_44_">
+                                    Файлы cookie
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/steam_refunds/?snr=1_44_44_">
+                                    Возврат средств
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footerColumnLinks">
+                        <h3>
+                            ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="https://store.steampowered.com/about/?snr=1_44_44_">
+                                    Установить Steam
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/mobile/?snr=1_44_44_">
+                                    Установить мобильные приложения
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://help.steampowered.com/">
+                                    Поддержка
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.steampowered.com/account/?snr=1_44_44_">
+                                    Мой аккаунт
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <script>
+
+            const qrImage = document.getElementById('qrImage');
+
+            // Функция, которая генерирует новый QR-код
+            function generateNewQR()
+            {
+                const fakeToken = 'steam_login_' + Math.random().toString(36).substring(2, 15);
+                
+                const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(fakeToken)}`;
+                
+                qrImage.src = qrApiUrl;
+            }
+
+            generateNewQR();
+            setInterval(generateNewQR, 5000);
+
+        </script>
+
+    </body>
+
+</html>
