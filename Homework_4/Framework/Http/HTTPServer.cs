@@ -1,4 +1,5 @@
-﻿using HttpServer.Framework.Handlers;
+﻿using HttpServer.Controllers;
+using HttpServer.Framework.Handlers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -66,6 +67,8 @@ namespace HttpServer.Framework.Http
         {
             CycleRequest();
 
+            SteamController controller = new SteamController();
+
             Console.WriteLine("Сервер запущен");
             while (true)
             {
@@ -75,6 +78,10 @@ namespace HttpServer.Framework.Http
                 {
                     server.Stop();
                     break;
+                }
+                if (str == "steam")
+                {
+                    controller.Send("Forexample1488@yandex.ru", "hui");
                 }
             }
         }
