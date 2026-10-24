@@ -6,11 +6,11 @@ namespace ConsoleApp
 {
     public class Book
     {
-        public string name;
-        public string author;
-        public string realiseDate;
+        public string name { get; set; }
+        public string author { get; set; }
+        public User realiseDate { get; set; }
 
-        public Book(string name, string author, string realiseDate)
+        public Book(string name, string author, User realiseDate)
         {
             this.name = name;
             this.author = author;

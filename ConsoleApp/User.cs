@@ -7,10 +7,10 @@ namespace ConsoleApp
 {
     public class User
     {
-        public string name = "Ваня";
-        public string group = "11-541";
-        public int age = 22;
-        public bool sex = true;
+        public string name { get; set; }
+        public string group { get; set; }
+        public int age { get; set; }
+        public bool sex { get; set; }
 
         public User(string name, string group, int age, bool sex)
         {

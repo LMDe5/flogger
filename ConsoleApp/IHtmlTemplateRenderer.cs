@@ -27,7 +27,6 @@
         /// Строка с готовой HTML-разметкой после обработки шаблона.
         /// </returns>
         string RenderFromString(string htmlTemplate, object dataModel);
-        
         string RenderFromFile(string filePath, object dataModel);
 
         /// <summary>
