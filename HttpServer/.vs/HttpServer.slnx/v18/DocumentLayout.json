@@ -1,0 +1,276 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\HttpServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{82819FFA-4F70-4A9C-AB13-8BDF97E8ABF6}|MiniTemplateEngine\\MiniTemplateEngine.csproj|c:\\users\\user\\source\\repos\\httpserver\\minitemplateengine\\httpservertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82819FFA-4F70-4A9C-AB13-8BDF97E8ABF6}|MiniTemplateEngine\\MiniTemplateEngine.csproj|solutionrelative:minitemplateengine\\httpservertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82819FFA-4F70-4A9C-AB13-8BDF97E8ABF6}|MiniTemplateEngine\\MiniTemplateEngine.csproj|c:\\users\\user\\source\\repos\\httpserver\\minitemplateengine\\httpserverhandlerstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82819FFA-4F70-4A9C-AB13-8BDF97E8ABF6}|MiniTemplateEngine\\MiniTemplateEngine.csproj|solutionrelative:minitemplateengine\\httpserverhandlerstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\core\\http\\httpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\core\\http\\httpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\core\\http\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\core\\http\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82819FFA-4F70-4A9C-AB13-8BDF97E8ABF6}|MiniTemplateEngine\\MiniTemplateEngine.csproj|c:\\users\\user\\source\\repos\\httpserver\\minitemplateengine\\htmltemplaterendertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82819FFA-4F70-4A9C-AB13-8BDF97E8ABF6}|MiniTemplateEngine\\MiniTemplateEngine.csproj|solutionrelative:minitemplateengine\\htmltemplaterendertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\core\\handlers\\staticfilehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\core\\handlers\\staticfilehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\core\\handlers\\handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\core\\handlers\\handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\core\\handlers\\notfoundhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\core\\handlers\\notfoundhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\messagesender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\messagesender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9481915-D8CD-6D68-F299-89934EFF3090}|..\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj|c:\\users\\user\\source\\repos\\consoleapp\\consoleapp\\htmltemplaterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9481915-D8CD-6D68-F299-89934EFF3090}|..\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj|c:\\users\\user\\source\\repos\\consoleapp\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\core\\httpresponses\\htmlresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\core\\httpresponses\\htmlresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\steamparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\steamparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\core\\httpresponses\\jsonresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\core\\httpresponses\\jsonresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|c:\\users\\user\\source\\repos\\httpserver\\httpserver\\core\\httpresponses\\ihttpresponsetyperesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD63867-256A-D79A-A766-68BD24DB9900}|HttpServer\\HttpServer.csproj|solutionrelative:httpserver\\core\\httpresponses\\ihttpresponsetyperesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HTTPServer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Http\\HTTPServer.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Core\\Http\\HTTPServer.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Http\\HTTPServer.cs",
+              "RelativeToolTip": "HttpServer\\Core\\Http\\HTTPServer.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAASwGMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T10:26:45.943Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HTTPServerTests.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\MiniTemplateEngine\\HTTPServerTests.cs",
+              "RelativeDocumentMoniker": "MiniTemplateEngine\\HTTPServerTests.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\MiniTemplateEngine\\HTTPServerTests.cs",
+              "RelativeToolTip": "MiniTemplateEngine\\HTTPServerTests.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAA7wG8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T16:34:54.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HttpServerHandlersTest.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\MiniTemplateEngine\\HttpServerHandlersTest.cs",
+              "RelativeDocumentMoniker": "MiniTemplateEngine\\HttpServerHandlersTest.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\MiniTemplateEngine\\HttpServerHandlersTest.cs",
+              "RelativeToolTip": "MiniTemplateEngine\\HttpServerHandlersTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T16:31:19.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HtmlTemplateRenderTests.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\MiniTemplateEngine\\HtmlTemplateRenderTests.cs",
+              "RelativeDocumentMoniker": "MiniTemplateEngine\\HtmlTemplateRenderTests.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\MiniTemplateEngine\\HtmlTemplateRenderTests.cs",
+              "RelativeToolTip": "MiniTemplateEngine\\HtmlTemplateRenderTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T16:01:03.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Http\\Settings.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Core\\Http\\Settings.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Http\\Settings.cs",
+              "RelativeToolTip": "HttpServer\\Core\\Http\\Settings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T09:17:54.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MessageSender.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\MessageSender.cs",
+              "RelativeDocumentMoniker": "HttpServer\\MessageSender.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\MessageSender.cs",
+              "RelativeToolTip": "HttpServer\\MessageSender.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T13:39:21.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StaticFileHandler.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Handlers\\StaticFileHandler.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Core\\Handlers\\StaticFileHandler.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Handlers\\StaticFileHandler.cs",
+              "RelativeToolTip": "HttpServer\\Core\\Handlers\\StaticFileHandler.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAGwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-09T18:20:21.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Handler.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Handlers\\Handler.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Core\\Handlers\\Handler.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Handlers\\Handler.cs",
+              "RelativeToolTip": "HttpServer\\Core\\Handlers\\Handler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-09T18:20:22.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NotFoundHandler.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Handlers\\NotFoundHandler.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Core\\Handlers\\NotFoundHandler.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\Handlers\\NotFoundHandler.cs",
+              "RelativeToolTip": "HttpServer\\Core\\Handlers\\NotFoundHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-09T18:20:21.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HtmlResult.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\HttpResponses\\HtmlResult.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Core\\HttpResponses\\HtmlResult.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\HttpResponses\\HtmlResult.cs",
+              "RelativeToolTip": "HttpServer\\Core\\HttpResponses\\HtmlResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T09:19:20.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HtmlTemplateRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\ConsoleApp\\ConsoleApp\\HtmlTemplateRenderer.cs",
+              "RelativeDocumentMoniker": "..\\ConsoleApp\\ConsoleApp\\HtmlTemplateRenderer.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\ConsoleApp\\ConsoleApp\\HtmlTemplateRenderer.cs",
+              "RelativeToolTip": "..\\ConsoleApp\\ConsoleApp\\HtmlTemplateRenderer.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAGQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T12:05:28.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\ConsoleApp\\ConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "..\\ConsoleApp\\ConsoleApp\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\ConsoleApp\\ConsoleApp\\Program.cs",
+              "RelativeToolTip": "..\\ConsoleApp\\ConsoleApp\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAawBIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T11:50:42.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Program.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Program.cs",
+              "RelativeToolTip": "HttpServer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-09T11:28:56.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SteamParser.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\SteamParser.cs",
+              "RelativeDocumentMoniker": "HttpServer\\SteamParser.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\SteamParser.cs",
+              "RelativeToolTip": "HttpServer\\SteamParser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T16:11:01.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "JsonResult.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\HttpResponses\\JsonResult.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Core\\HttpResponses\\JsonResult.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\HttpResponses\\JsonResult.cs",
+              "RelativeToolTip": "HttpServer\\Core\\HttpResponses\\JsonResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T09:19:21.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IHttpResponseTypeResult.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\HttpResponses\\IHttpResponseTypeResult.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Core\\HttpResponses\\IHttpResponseTypeResult.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HttpServer\\HttpServer\\Core\\HttpResponses\\IHttpResponseTypeResult.cs",
+              "RelativeToolTip": "HttpServer\\Core\\HttpResponses\\IHttpResponseTypeResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T09:19:21.046Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
