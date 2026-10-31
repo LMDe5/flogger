@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../ConsoleApp/ConsoleApp/ConsoleApp.csproj" />
+  <Project Path="HttpServer/HttpServer.csproj" />
+  <Project Path="MiniTemplateEngine/MiniTemplateEngine.csproj" Id="82819ffa-4f70-4a9c-ab13-8bdf97e8abf6" />
+</Solution>
