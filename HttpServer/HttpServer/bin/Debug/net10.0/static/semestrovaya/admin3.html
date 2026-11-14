@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="description" content="Создание и редактирование карточек вики «Тайный Грааль».">
+  <title>Редактор карточки — Панель управления</title>
+  <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+  <link rel="stylesheet" href="semestrovaya/styles.css">
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js" defer></script>
+  <style>
+    .editor-heading { margin: 0 0 24px; }
+    .editor-heading .eyebrow { margin-bottom: 9px; }
+    .editor-heading h1 { margin: 0; color: var(--text); font-family: var(--serif); font-size: clamp(35px, 4.4vw, 50px); font-weight: 400; letter-spacing: -.04em; line-height: 1.12; }
+    .editor-heading h1 span { color: var(--gold-light); }
+    .form-panel { max-width: 930px; padding: clamp(19px, 3vw, 31px); border: 1px solid rgba(201, 167, 109, .2); background: radial-gradient(ellipse at 100% 0, rgba(201, 167, 109, .055), transparent 38%), linear-gradient(145deg, rgba(20, 20, 26, .97), rgba(13, 13, 17, .98)); box-shadow: 0 18px 45px rgba(0, 0, 0, .23); animation: form-appear .65s .05s ease-out both; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 21px 20px; }
+    .field { min-width: 0; }
+    .field--full { grid-column: 1 / -1; }
+    .field__label { display: block; margin-bottom: 8px; color: #d7d0c3; font-family: var(--serif); font-size: 15px; }
+    .required-mark { color: var(--gold-light); }
+    .field__control { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(201, 167, 109, .22); border-radius: 0; color: var(--text); background: #101015; font-size: 12px; transition: border-color .2s ease, box-shadow .2s ease; }
+    .field__control::placeholder { color: #6d6a65; }
+    .field__control:focus { border-color: rgba(201, 167, 109, .72); outline: none; box-shadow: 0 0 0 3px rgba(201, 167, 109, .08); }
+    .field__control[aria-invalid="true"] { border-color: rgba(208, 101, 108, .8); box-shadow: 0 0 0 2px rgba(180, 61, 69, .1); }
+    select.field__control { appearance: none; padding-right: 38px; background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 17px) 19px, calc(100% - 12px) 19px; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+    select.field__control option { color: var(--text); background: #111116; }
+    .field-error { display: block; margin-top: 5px; color: #e29296; font-size: 10px; line-height: 1.45; }
+    .field-error:empty { display: none; }
+
+    /* Quill — тёмный редактор с золотыми акцентами */
+    #editor { min-height: 190px; border: 1px solid rgba(201, 167, 109, .3); background: #101015; }
+    #editor[contenteditable="true"] { padding: 12px; color: #e8e3d9; line-height: 1.7; }
+    #editor[contenteditable="true"]:empty::before { content: attr(data-placeholder); color: #77736d; font-style: italic; pointer-events: none; }
+    .ql-toolbar.ql-snow { border: 1px solid rgba(201, 167, 109, .3) !important; background: #17171d; }
+    .ql-container.ql-snow { border: 1px solid rgba(201, 167, 109, .3) !important; border-top: 0 !important; color: var(--text); background: #101015; font-family: Arial, sans-serif; font-size: 13px; }
+    .ql-snow .ql-stroke { stroke: #cdb579 !important; }
+    .ql-snow .ql-fill { fill: #cdb579 !important; }
+    .ql-snow .ql-picker, .ql-snow .ql-picker-label { color: #d8cfbd !important; }
+    .ql-snow .ql-picker-label { border-color: transparent !important; }
+    .ql-snow .ql-picker-options { border: 1px solid rgba(201, 167, 109, .36) !important; background: #17171d !important; }
+    .ql-snow .ql-picker-item { color: #ddd5c5 !important; }
+    .ql-snow .ql-picker-item:hover, .ql-snow .ql-picker-item.ql-selected, .ql-snow .ql-picker-label:hover, .ql-snow .ql-picker-label.ql-active { color: var(--gold-light) !important; }
+    .ql-snow .ql-toolbar button:hover .ql-stroke, .ql-snow .ql-toolbar button.ql-active .ql-stroke { stroke: var(--gold-light) !important; }
+    .ql-snow .ql-toolbar button:hover .ql-fill, .ql-snow .ql-toolbar button.ql-active .ql-fill { fill: var(--gold-light) !important; }
+    .ql-snow .ql-toolbar button:hover, .ql-snow .ql-toolbar button.ql-active { background: rgba(201, 167, 109, .1); }
+    .ql-snow .ql-editor { min-height: 190px; color: #e8e3d9; line-height: 1.7; }
+    .ql-snow .ql-editor.ql-blank::before { color: #77736d; font-style: italic; }
+    .ql-snow .ql-editor a { color: var(--gold-light); }
+    .ql-snow .ql-tooltip { border: 1px solid rgba(201, 167, 109, .42) !important; color: var(--text) !important; background: #17171d !important; box-shadow: 0 8px 25px rgba(0, 0, 0, .4) !important; }
+    .ql-snow .ql-tooltip input[type="text"] { border: 1px solid rgba(201, 167, 109, .35) !important; color: var(--text) !important; background: #0d0d11 !important; }
+    .ql-snow .ql-tooltip a { color: var(--gold-light) !important; }
+    .description-meta { display: flex; justify-content: flex-end; margin-top: 7px; color: #858078; font-size: 10px; letter-spacing: .035em; }
+    .character-counter.is-over-limit { color: #e29296; }
+
+    .file-picker { min-height: 76px; display: flex; align-items: center; gap: 15px; padding: 13px 15px; border: 1px dashed rgba(201, 167, 109, .38); background: rgba(201, 167, 109, .025); transition: border-color .2s ease, background .2s ease; }
+    .file-picker:focus-within, .file-picker:hover { border-color: rgba(226, 197, 140, .72); background: rgba(201, 167, 109, .055); }
+    .file-input-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .file-picker__button { min-height: 36px; display: inline-flex; align-items: center; justify-content: center; padding: 0 13px; border: 1px solid rgba(201, 167, 109, .54); color: var(--gold-light); background: rgba(201, 167, 109, .07); font-size: 10px; letter-spacing: .07em; cursor: pointer; transition: background .2s ease, color .2s ease; }
+    .file-picker__button:hover { color: #17130d; background: var(--gold-light); }
+    .file-picker__hint { min-width: 0; color: #89857d; font-size: 10px; overflow-wrap: anywhere; }
+    .notice { display: flex; align-items: center; gap: 10px; margin-top: 20px; padding: 12px 14px; border: 1px solid; font-size: 12px; }
+    .notice[hidden] { display: none !important; }
+    .notice--success { border-color: rgba(105, 174, 125, .5); color: #b7dfc1; background: rgba(42, 99, 59, .18); }
+    .notice--error { border-color: rgba(197, 88, 96, .55); color: #e8adb0; background: rgba(112, 32, 39, .19); }
+    .notice__icon { font-size: 15px; line-height: 1; }
+    .form-actions { display: flex; align-items: center; justify-content: flex-end; gap: 11px; margin-top: 24px; padding-top: 19px; border-top: 1px solid rgba(201, 167, 109, .13); }
+    .form-actions .button { min-width: 116px; min-height: 43px; font-size: 10px; letter-spacing: .1em; }
+    .form-actions .button:disabled { opacity: .65; cursor: wait; transform: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    @keyframes form-appear { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; gap: 17px; }
+      .field--full { grid-column: auto; }
+      .form-actions { flex-direction: column-reverse; align-items: stretch; }
+      .form-actions .button { width: 100%; }
+      .file-picker { align-items: flex-start; flex-direction: column; gap: 10px; }
+      .ql-toolbar.ql-snow { padding: 6px; }
+      .ql-snow .ql-toolbar button, .ql-snow.ql-toolbar button { width: 28px; height: 28px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .form-panel { animation: none; } }
+  </style>
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <a class="brand" href="/admin" aria-label="Тайный Грааль — панель управления">
+        <span class="brand__seal" aria-hidden="true">✦</span>
+        <span class="brand__text"><strong>Тайный Грааль</strong><small>ПАНЕЛЬ УПРАВЛЕНИЯ</small></span>
+      </a>
+      <p class="admin-sidebar__label">Управление</p>
+      <nav class="admin-nav" aria-label="Разделы панели управления">
+        <a class="admin-nav__link" href="/admin"><span class="admin-nav__icon" aria-hidden="true">⌂</span><span>Дашборд</span></a>
+        <a class="admin-nav__link is-active" href="/admin/cards" aria-current="page"><span class="admin-nav__icon" aria-hidden="true">✧</span><span>Карточки</span></a>
+      </nav>
+      <div class="admin-sidebar__grow"></div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-breadcrumb">Панель управления <span>/</span> Редактор карточки</div>
+      <section class="editor-heading" aria-labelledby="editor-title">
+        <p class="eyebrow">АРХИВ ИГРЫ</p>
+        <h1 id="editor-title">Редактор <span>карточки</span></h1>
+      </section>
+
+      <section class="form-panel" aria-label="Форма карточки">
+        <form id="card-form" action="/api/admin/cards" method="post" enctype="multipart/form-data" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label class="field__label" for="card-name">Название <span class="required-mark">*</span></label>
+              <input class="field__control" type="text" id="card-name" name="CardName" value="${CardName}" autocomplete="off" aria-describedby="card-name-error">
+              <span class="field-error" id="card-name-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="card-type">Тип</label>
+              <select class="field__control" id="card-type" name="CardType">
+                <option value="Персонаж" $if(CardType == 'Персонаж') selected $endif>Персонаж</option>
+                <option value="Реликвия" $if(CardType == 'Реликвия') selected $endif>Реликвия</option>
+                <option value="Место" $if(CardType == 'Место') selected $endif>Место</option>
+                <option value="Орден" $if(CardType == 'Орден') selected $endif>Орден</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="card-alignment">Принадлежность</label>
+              <select class="field__control" id="card-alignment" name="CardAlignment">
+                <option value="Добро" $if(CardAlignment == 'Добро') selected $endif>Добро</option>
+                <option value="Зло" $if(CardAlignment == 'Зло') selected $endif>Зло</option>
+                <option value="Нейтрал" $if(CardAlignment == 'Нейтрал') selected $endif>Нейтрал</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="card-ability">Способность <span class="required-mark">*</span></label>
+              <input class="field__control" type="text" id="card-ability" name="CardAbility" value="${CardAbility}" autocomplete="off" aria-describedby="card-ability-error">
+              <span class="field-error" id="card-ability-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field field--full">
+              <label class="field__label" for="editor">Описание</label>
+              <div id="editor" aria-label="Описание карточки"></div>
+              <textarea id="description-field" hidden aria-hidden="true"></textarea>
+              <div class="description-meta"><span class="character-counter" id="character-counter" aria-live="polite">Символов: 0 / 500</span></div>
+            </div>
+
+            <div class="field field--full">
+              <span class="field__label">Изображение карточки</span>
+              <div class="file-picker">
+                <input class="file-input-hidden" type="file" id="card-image" name="CardImage" accept="image/*">
+                <label class="file-picker__button" for="card-image">Выбрать изображение</label>
+                <span class="file-picker__hint" id="file-name">Файл не выбран</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="notice" id="form-notice" role="status" aria-live="polite" hidden></div>
+          <div class="form-actions">
+            <a class="button button--secondary" href="/admin/cards">Отмена</a>
+            <button class="button button--primary" id="save-button" type="submit">Сохранить</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('card-form');
+      const nameInput = document.getElementById('card-name');
+      const abilityInput = document.getElementById('card-ability');
+      const nameError = document.getElementById('card-name-error');
+      const abilityError = document.getElementById('card-ability-error');
+      const editorElement = document.getElementById('editor');
+      const counter = document.getElementById('character-counter');
+      const descriptionField = document.getElementById('description-field');
+      const notice = document.getElementById('form-notice');
+      const saveButton = document.getElementById('save-button');
+      const fileInput = document.getElementById('card-image');
+      const fileName = document.getElementById('file-name');
+      let quill = null;
+
+      if (window.Quill) {
+        quill = new Quill(editorElement, {
+          theme: 'snow',
+          placeholder: 'Введите описание карточки…',
+          modules: {
+            toolbar: [
+              [{ header: [2, 3, false] }],
+              ['bold', 'italic', 'underline'],
+              [{ list: 'ordered' }, { list: 'bullet' }],
+              ['link', 'clean']
+            ]
+          }
+        });
+      } else {
+        editorElement.setAttribute('contenteditable', 'true');
+        editorElement.setAttribute('data-placeholder', 'Введите описание карточки…');
+      }
+
+      function updateCounter() {
+        const text = quill ? quill.getText().trimEnd() : editorElement.innerText.trim();
+        const count = text.length;
+        const html = quill ? quill.root.innerHTML : editorElement.innerHTML;
+        counter.textContent = 'Символов: ' + count + ' / 500';
+        counter.classList.toggle('is-over-limit', count > 500);
+        descriptionField.value = html;
+      }
+
+      function clearNotice() {
+        notice.hidden = true;
+        notice.className = 'notice';
+        notice.textContent = '';
+      }
+
+      function showNotice(type, message) {
+        notice.hidden = false;
+        notice.className = 'notice notice--' + type;
+        notice.innerHTML = '<span class="notice__icon" aria-hidden="true">' + (type === 'success' ? '✦' : '✕') + '</span><span>' + message + '</span>';
+      }
+
+      if (quill) quill.on('text-change', updateCounter);
+      else editorElement.addEventListener('input', updateCounter);
+      updateCounter();
+
+      nameInput.addEventListener('input', function () {
+        nameError.textContent = '';
+        nameInput.removeAttribute('aria-invalid');
+      });
+      abilityInput.addEventListener('input', function () {
+        abilityError.textContent = '';
+        abilityInput.removeAttribute('aria-invalid');
+      });
+      fileInput.addEventListener('change', function () {
+        fileName.textContent = fileInput.files && fileInput.files.length ? fileInput.files[0].name : 'Файл не выбран';
+      });
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        clearNotice();
+        nameError.textContent = '';
+        abilityError.textContent = '';
+        nameInput.removeAttribute('aria-invalid');
+        abilityInput.removeAttribute('aria-invalid');
+        let isValid = true;
+
+        if (!nameInput.value.trim()) {
+          nameError.textContent = 'Введите название карточки.';
+          nameInput.setAttribute('aria-invalid', 'true');
+          isValid = false;
+        }
+        if (!abilityInput.value.trim()) {
+          abilityError.textContent = 'Введите способность.';
+          abilityInput.setAttribute('aria-invalid', 'true');
+          isValid = false;
+        }
+        if (!isValid) {
+          const firstInvalid = form.querySelector('[aria-invalid="true"]');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        updateCounter();
+        const formData = new FormData(form);
+        formData.append('CardDescription', descriptionField.value);
+        saveButton.disabled = true;
+        saveButton.textContent = 'Сохранение…';
+
+        try {
+          const response = await fetch('/api/admin/cards', { method: 'POST', body: formData });
+          if (!response.ok) throw new Error('Request failed');
+          showNotice('success', 'Успешно сохранено');
+        } catch (error) {
+          showNotice('error', 'Ошибка. Не удалось сохранить карточку. Попробуйте ещё раз.');
+        } finally {
+          saveButton.disabled = false;
+          saveButton.textContent = 'Сохранить';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

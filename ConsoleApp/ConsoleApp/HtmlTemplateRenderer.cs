@@ -78,14 +78,6 @@ namespace ConsoleApp
                     object? value = property.GetValue(dataModel);
                     if (value == null) { return match.Value; }
 
-                    //Type valueType = value.GetType();
-                    //bool isSimple = IsSimple(valueType);
-                    //if (!isSimple)
-                    //{
-                    //    string zaglushka = "<p>group: ${group}</p>";
-                    //    return RenderFromString(zaglushka, value);
-                    //}
-
                     return value.ToString();
                 }
                 Console.WriteLine($"null! замена не удаласб в {fieldName}");
@@ -118,13 +110,5 @@ namespace ConsoleApp
             if (value is string s) { return !string.IsNullOrEmpty(s); }
             return value != null;
         }
-
-        //private bool IsSimple(Type type)
-        //{
-        //    return type.IsPrimitive
-        //      || type.IsEnum
-        //      || type.Equals(typeof(string))
-        //      || type.Equals(typeof(decimal));
-        //}
     }
 }

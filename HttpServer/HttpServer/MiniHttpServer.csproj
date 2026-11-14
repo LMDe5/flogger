@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <Content Include="settings.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="static\**\*">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.13.1" />
+    <PackageReference Include="MailKit" Version="4.18.1" />
+    <PackageReference Include="MimeKit" Version="4.18.1" />
+    <PackageReference Include="Npgsql" Version="10.0.3" />
+    <PackageReference Include="ServiceStack.Interfaces" Version="10.4.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ConsoleApp\ConsoleApp\ConsoleApp.csproj" />
+    <ProjectReference Include="..\MiniHttpServer.ORM\MiniHttpServer.ORM.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="static\Login_Form\forget.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\Login_Form\login.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\Login_Form\register.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\Login_Form\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\404.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\admin1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\admin2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\admin3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\cardInfo.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\cardsPage.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\Login.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\rulesPage.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="static\semestrovaya\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="static\images\" />
+  </ItemGroup>
+
+</Project>

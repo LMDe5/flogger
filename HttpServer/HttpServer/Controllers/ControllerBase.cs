@@ -1,14 +1,12 @@
-﻿using HttpServer.Framework.HttpResponses;
-using System;
-using System.Collections.Generic;
+﻿using ConsoleApp;
+using HttpServer.Framework.HttpResponses;
 using System.Net;
-using System.Text;
-using System.Text.Json;
 
 namespace HttpServer.Controllers
 {
     internal class ControllerBase
     {
+        private HtmlTemplateRenderer render = new HtmlTemplateRenderer();
         protected HttpListenerContext Context { get; private set; }
 
         internal void SetContext(HttpListenerContext Context)
@@ -18,5 +16,14 @@ namespace HttpServer.Controllers
 
         protected JsonResult Json(object obj) => new JsonResult(obj);
         protected HtmlResult Html(string html) => new HtmlResult(html);
+
+
+        protected HtmlResult Html(string templateFileName, object model)
+        {
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "static", templateFileName);
+
+            string renderHtml = render.RenderFromFile(path, model);
+            return Html(renderHtml);
+        }
     }
 }
