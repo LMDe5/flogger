@@ -32,4 +32,10 @@
     <Folder Include="Framework\Settings\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Framework\Settings.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>
