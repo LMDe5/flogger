@@ -1,8 +1,0 @@
-<Solution>
-  <Project Path="../ConsoleApp/ConsoleApp/ConsoleApp.csproj" />
-  <Project Path="HttpServer/MiniHttpServer.csproj" />
-  <Project Path="MiniHttpServer.Framework.UnitTests/MiniHttpServer.Framework.UnitTests.csproj" Id="9f0bd256-716e-41d4-9377-52ba41ab1697" />
-  <Project Path="MiniHttpServer.ORM.UnitTests/MiniHttpServer.ORM.UnitTests.csproj" Id="b6410ccc-52a4-43d5-b63a-1b9c0af4c5c6" />
-  <Project Path="MiniHttpServer.ORM/MiniHttpServer.ORM.csproj" Id="8d76ac34-e0c6-4f53-86f8-ea447216dafa" />
-  <Project Path="MiniTemplateEngine/MiniHttpServer.HtmlTemplating.UnitTests.csproj" Id="82819ffa-4f70-4a9c-ab13-8bdf97e8abf6" />
-</Solution>
