@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniHttpServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15ef17e51769f6c469ed887bcb5797956aae2325")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2c2961e112a8fd5550978ef7ba6f5303dd00333")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniHttpServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniHttpServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

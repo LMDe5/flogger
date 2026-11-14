@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj": {}
+    "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj": {
+    "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\obj\\",
+        "projectPath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\amir_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\ConsoleApp\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
