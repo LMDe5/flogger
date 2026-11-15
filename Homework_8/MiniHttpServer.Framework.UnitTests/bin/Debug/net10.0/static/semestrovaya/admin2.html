@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="description" content="Управление карточками вики настольной игры «Тайный Грааль».">
+  <title>Карточки — Панель управления</title>
+  <link rel="stylesheet" href="semestrovaya/styles.css">
+  <style>
+    .cards-heading { margin: 0 0 26px; }
+    .cards-heading .eyebrow { margin-bottom: 9px; }
+    .cards-heading h1 { margin: 0; color: var(--text); font-family: var(--serif); font-size: clamp(36px, 4.5vw, 52px); font-weight: 400; letter-spacing: -.04em; line-height: 1.12; }
+    .cards-heading h1 span { color: var(--gold-light); }
+    .cards-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 20px; }
+    .search-field { position: relative; width: min(420px, 100%); }
+    .search-field__icon { position: absolute; top: 50%; left: 13px; color: var(--gold); font-size: 17px; line-height: 1; transform: translateY(-55%); pointer-events: none; }
+    .search-field input { width: 100%; height: 43px; padding: 0 14px 0 39px; border: 1px solid rgba(201, 167, 109, .2); border-radius: 0; outline: none; color: var(--text); background: rgba(18, 18, 23, .88); font-size: 11px; transition: border-color .2s ease, box-shadow .2s ease; }
+    .search-field input::placeholder { color: #77736d; }
+    .search-field input:focus { border-color: rgba(201, 167, 109, .65); box-shadow: 0 0 15px rgba(201, 167, 109, .08); }
+    .cards-toolbar .button { min-height: 43px; flex: 0 0 auto; padding-inline: 16px; font-size: 10px; letter-spacing: .08em; }
+    .button__plus { font-size: 18px; font-weight: 400; line-height: 1; }
+
+    .table-frame { overflow: hidden; border: 1px solid rgba(201, 167, 109, .2); background: linear-gradient(145deg, rgba(20, 20, 26, .96), rgba(13, 13, 17, .98)); box-shadow: 0 16px 38px rgba(0, 0, 0, .2); animation: table-appear .65s ease-out both; }
+    .table-scroll { overflow-x: auto; }
+    .cards-table { width: 100%; min-width: 775px; border-collapse: collapse; text-align: left; }
+    .cards-table thead { background: rgba(201, 167, 109, .055); }
+    .cards-table th { height: 48px; padding: 0 15px; border-bottom: 1px solid rgba(201, 167, 109, .2); color: #a69c87; font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
+    .cards-table td { height: 76px; padding: 10px 15px; border-bottom: 1px solid rgba(201, 167, 109, .1); color: #c7c2b8; font-size: 11px; vertical-align: middle; }
+    .cards-table tbody tr:last-child td { border-bottom: 0; }
+    .cards-table tbody tr { transition: background .2s ease; }
+    .cards-table tbody tr:hover { background: rgba(201, 167, 109, .045); }
+    .cell-id { color: #77736c; font-family: var(--serif); font-size: 12px; }
+    .thumbnail { display: block; width: 59px; height: 44px; object-fit: cover; border: 1px solid rgba(201, 167, 109, .37); background: linear-gradient(135deg, #252830, #111318); }
+    .card-name { color: #eee9df; font-family: var(--serif); font-size: 15px; }
+
+        .actions-cell { white-space: nowrap; }
+    .row-actions { display: flex; align-items: center; gap: 7px; }
+    .icon-button { width: 32px; height: 32px; display: inline-grid; place-items: center; border: 1px solid rgba(201, 167, 109, .25); color: #cbb98f; background: rgba(201, 167, 109, .045); font-size: 15px; line-height: 1; transition: color .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+    .icon-button:hover { border-color: var(--gold-light); color: var(--gold-light); background: rgba(201, 167, 109, .12); box-shadow: 0 0 12px rgba(201, 167, 109, .12); }
+    .icon-button--delete { border-color: rgba(137, 49, 57, .34); color: #b97c80; background: rgba(112, 30, 39, .08); cursor: pointer; }
+    .icon-button--delete:hover { border-color: rgba(189, 91, 97, .7); color: #e3a2a5; background: rgba(112, 30, 39, .22); box-shadow: 0 0 12px rgba(138, 44, 53, .18); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    @keyframes table-appear { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 620px) {
+      .cards-toolbar { align-items: stretch; flex-direction: column; }
+      .search-field { width: 100%; }
+      .cards-toolbar .button { width: 100%; }
+      .cards-table { min-width: 745px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .table-frame { animation: none; } }
+  </style>
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <a class="brand" href="/admin" aria-label="Тайный Грааль — панель управления">
+        <span class="brand__seal" aria-hidden="true">✦</span>
+        <span class="brand__text"><strong>Тайный Грааль</strong><small>ПАНЕЛЬ УПРАВЛЕНИЯ</small></span>
+      </a>
+      <p class="admin-sidebar__label">Управление</p>
+      <nav class="admin-nav" aria-label="Разделы панели управления">
+        <a class="admin-nav__link" href="/admin"><span class="admin-nav__icon" aria-hidden="true">⌂</span><span>Дашборд</span></a>
+        <a class="admin-nav__link is-active" href="/admin/cards" aria-current="page"><span class="admin-nav__icon" aria-hidden="true">✧</span><span>Карточки</span></a>
+      </nav>
+      <div class="admin-sidebar__grow"></div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-breadcrumb">Панель управления <span>/</span> Карточки</div>
+      <section class="cards-heading" aria-labelledby="cards-title">
+        <p class="eyebrow">АРХИВ ИГРЫ</p>
+        <h1 id="cards-title">Управление <span>карточками</span></h1>
+      </section>
+
+      <section aria-label="Поиск и добавление карточек">
+        <div class="cards-toolbar">
+          <label class="search-field">
+            <span class="search-field__icon" aria-hidden="true">⌕</span>
+            <span class="sr-only">Поиск по карточкам</span>
+            <input type="search" placeholder="Поиск по карточкам…" autocomplete="off">
+          </label>
+          <a class="button button--primary" href="/admin/cards/new"><span class="button__plus" aria-hidden="true">+</span>Добавить карточку</a>
+        </div>
+      </section>
+
+      <section class="table-frame" aria-label="Список карточек">
+        <div class="table-scroll">
+          <table class="cards-table">
+            <caption class="sr-only">Карточки игры «Тайный Грааль»</caption>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Миниатюра</th>
+                <th scope="col">Название</th>
+                <th scope="col">Тип</th>
+                <th scope="col">Принадлежность</th>
+                <th scope="col">Действия</th>
+              </tr>
+            </thead>
+            <tbody>
+$foreach(var card in Cards)
+              <tr>
+                <td class="cell-id">${CardId}</td>
+                <td><img class="thumbnail" src="${CardImage}" alt="${CardName}" loading="lazy"></td>
+                <td><span class="card-name">${CardName}</span></td>
+                <td><span class="type-badge">${CardType}</span></td>
+                <td><span class="alignment-badge" data-alignment="${CardAlignment}">${CardAlignment}</span></td>
+                <td class="actions-cell">
+                  <div class="row-actions">
+                    <a class="icon-button" href="/admin/cards/${CardId}/edit" aria-label="Редактировать карточку ${CardName}" title="Редактировать">✎</a>
+                    <button class="icon-button icon-button--delete" type="button" aria-label="Удалить карточку ${CardName}" title="Удалить">⌫</button>
+                  </div>
+                </td>
+              </tr>
+$endfor
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Поиск по названиям карточек
+    const searchInput = document.querySelector('.search-field input');
+    const rows = document.querySelectorAll('.cards-table tbody tr');
+
+    searchInput.addEventListener('input', function (event) {
+      const term = event.target.value.trim().toLocaleLowerCase('ru');
+      rows.forEach(function (row) {
+        const nameElement = row.querySelector('.card-name');
+        const name = nameElement ? nameElement.textContent.toLocaleLowerCase('ru') : '';
+        row.style.display = name.includes(term) ? '' : 'none';
+      });
+    });
+
+    // Удаление карточки через AJAX без перезагрузки страницы
+    document.querySelectorAll('.icon-button--delete').forEach(function (button) {
+      button.addEventListener('click', async function (event) {
+        const row = event.currentTarget.closest('tr');
+        if (!row) return;
+
+        const idElement = row.querySelector('.cell-id');
+        const nameElement = row.querySelector('.card-name');
+        const cardId = idElement ? idElement.textContent.trim() : '';
+        const cardName = nameElement ? nameElement.textContent.trim() : 'эту карточку';
+        if (!cardId || !window.confirm('Вы уверены, что хотите удалить карточку «' + cardName + '»?')) return;
+
+        button.disabled = true;
+        try {
+          const response = await fetch('/api/admin/cards/' + encodeURIComponent(cardId), { method: 'DELETE' });
+          if (response.ok) {
+            row.remove();
+          } else {
+            window.alert('Ошибка при удалении карточки. Попробуйте ещё раз.');
+            button.disabled = false;
+          }
+        } catch (error) {
+          window.alert('Ошибка сети при удалении карточки.');
+          button.disabled = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

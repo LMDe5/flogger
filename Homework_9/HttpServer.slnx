@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="../ConsoleApp/ConsoleApp/ConsoleApp.csproj" />
+  <Project Path="HtmlTemplate.UnitTests/HtmlTemplate.UnitTests.csproj" Id="4def6267-f2f6-4384-9c28-bee7c7dd61a4" />
+  <Project Path="HttpServer/MiniHttpServer.csproj" />
+  <Project Path="MiniHttpServer.Framework.UnitTests/MiniHttpServer.Framework.UnitTests.csproj" />
+  <Project Path="MiniHttpServer.ORM.UnitTests/MiniHttpServer.ORM.UnitTests.csproj" />
+  <Project Path="MiniHttpServer.ORM/MiniHttpServer.ORM.csproj" />
+</Solution>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="description" content="Вход в панель управления вики «Тайный Грааль».">
+  <title>Вход — Тайный Грааль</title>
+  <link rel="stylesheet" href="semestrovaya/styles.css">
+  <style>
+    .login-page { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 28px 16px; background: radial-gradient(ellipse at 50% 35%, rgba(89, 72, 58, .15), transparent 28rem), radial-gradient(ellipse at 50% 100%, rgba(44, 58, 65, .12), transparent 35rem), var(--bg); }
+    .login-card { position: relative; width: min(100%, 430px); padding: 42px clamp(23px, 7vw, 48px) 38px; border: 1px solid rgba(201, 167, 109, .42); background: radial-gradient(ellipse at 50% 0, rgba(201, 167, 109, .08), transparent 46%), linear-gradient(145deg, rgba(23, 23, 29, .98), rgba(13, 13, 17, .98)); box-shadow: 0 0 0 6px rgba(201, 167, 109, .025), 0 0 48px rgba(201, 167, 109, .13), 0 28px 80px rgba(0, 0, 0, .56); animation: login-appear .7s ease-out both; }
+    .login-card::before, .login-card::after { content: ""; position: absolute; width: 21px; height: 21px; border-color: rgba(226, 197, 140, .75); border-style: solid; pointer-events: none; }
+    .login-card::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+    .login-card::after { right: -1px; bottom: -1px; border-width: 0 1px 1px 0; }
+
+    .login-brand { display: grid; justify-items: center; gap: 0; margin-bottom: 27px; text-align: center; }
+    .login-brand .brand__seal { position: relative; width: 66px; height: 66px; display: grid; place-items: center; margin: 0 0 15px; border: 1px solid rgba(201, 167, 109, .78); border-radius: 50%; color: var(--gold-light); font-size: 27px; line-height: 1; text-shadow: 0 0 15px rgba(226, 197, 140, .6); box-shadow: inset 0 0 21px rgba(201, 167, 109, .1), 0 0 25px rgba(201, 167, 109, .13); }
+    .login-brand .brand__seal::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(201, 167, 109, .36); border-radius: 50%; }
+    .login-brand .brand__text { align-items: center; gap: 7px; }
+    .login-brand .brand__text strong { font-size: 27px; letter-spacing: .025em; }
+    .login-brand .brand__text small { color: #8b8272; font-size: 8px; letter-spacing: .25em; }
+    .form-title { margin: 0 0 23px; color: #d8d1c5; font-family: var(--serif); font-size: 18px; font-weight: 400; text-align: center; }
+
+    .field { margin-bottom: 17px; }
+    .field__label { display: block; margin-bottom: 7px; color: #d1c9ba; font-family: var(--serif); font-size: 14px; }
+    .field__input { width: 100%; height: 46px; padding: 0 13px; border: 1px solid rgba(201, 167, 109, .24); border-radius: 0; outline: none; color: var(--text); background: rgba(8, 8, 11, .68); font-family: var(--sans); font-size: 13px; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; }
+    .field__input::placeholder { color: #69666a; }
+    .field__input:hover { border-color: rgba(201, 167, 109, .42); }
+    .field__input:focus { border-color: var(--gold); background: rgba(8, 8, 11, .9); box-shadow: 0 0 0 3px rgba(201, 167, 109, .08); }
+    .field__input[aria-invalid="true"] { border-color: rgba(208, 101, 108, .8); box-shadow: 0 0 0 2px rgba(180, 61, 69, .08); }
+    .field-error { display: block; margin-top: 5px; color: #e08f94; font-size: 10px; line-height: 1.4; }
+    .field-error:empty { display: none; }
+    .form-error { margin: 2px 0 16px; padding: 10px 12px; border: 1px solid rgba(197, 88, 96, .48); color: #e8adb0; background: rgba(112, 32, 39, .17); font-size: 11px; text-align: center; }
+    .form-error[hidden] { display: none !important; }
+    .login-card .button { width: 100%; min-height: 47px; justify-content: center; gap: 10px; margin-top: 7px; letter-spacing: .15em; }
+    .login-card .button:disabled { opacity: .7; cursor: wait; transform: none; }
+    .submit-arrow { font-size: 16px; font-weight: 400; line-height: 1; }
+    .card-footer { margin: 23px 0 0; color: #66646a; font-size: 9px; letter-spacing: .08em; text-align: center; }
+
+    @keyframes login-appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 480px) {
+      .login-page { padding: 18px 14px; }
+      .login-card { padding: 34px 22px 30px; }
+      .login-brand .brand__seal { width: 58px; height: 58px; font-size: 24px; }
+      .login-brand .brand__text strong { font-size: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .login-card { animation: none; } }
+  </style>
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-card" aria-labelledby="login-title">
+      <header class="brand login-brand">
+        <span class="brand__seal" aria-hidden="true">✦</span>
+        <span class="brand__text"><strong>Тайный Грааль</strong><small>ПАНЕЛЬ УПРАВЛЕНИЯ</small></span>
+      </header>
+
+      <h1 class="form-title" id="login-title">Врата архива</h1>
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label class="field__label" for="login">Логин</label>
+          <input class="field__input" type="text" id="login" name="login" autocomplete="username" placeholder="Введите логин" aria-describedby="login-error">
+          <span class="field-error" id="login-error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label class="field__label" for="password">Пароль</label>
+          <input class="field__input" type="password" id="password" name="password" autocomplete="current-password" placeholder="Введите пароль" aria-describedby="password-error">
+          <span class="field-error" id="password-error" aria-live="polite"></span>
+        </div>
+        <div class="form-error" id="form-error" role="alert" aria-live="polite" hidden></div>
+        <button class="button button--primary" id="submit-button" type="submit">Войти <span class="submit-arrow" aria-hidden="true">→</span></button>
+      </form>
+      <p class="card-footer">Доступ только для авторизованных пользователей</p>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('login-form');
+    const loginInput = document.getElementById('login');
+    const passwordInput = document.getElementById('password');
+    const loginError = document.getElementById('login-error');
+    const passwordError = document.getElementById('password-error');
+    const formError = document.getElementById('form-error');
+    const submitButton = document.getElementById('submit-button');
+    const loginPattern = /^[a-zA-Z0-9]+$/;
+
+    function clearFormError() {
+      formError.hidden = true;
+      formError.textContent = '';
+    }
+
+    function clearFieldError(input, errorElement) {
+      errorElement.textContent = '';
+      input.removeAttribute('aria-invalid');
+    }
+
+    loginInput.addEventListener('input', function () {
+      clearFieldError(loginInput, loginError);
+      clearFormError();
+    });
+
+    passwordInput.addEventListener('input', function () {
+      clearFieldError(passwordInput, passwordError);
+      clearFormError();
+    });
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      clearFormError();
+      clearFieldError(loginInput, loginError);
+      clearFieldError(passwordInput, passwordError);
+
+      const login = loginInput.value.trim();
+      const password = passwordInput.value;
+      let isValid = true;
+
+      if (!loginPattern.test(login)) {
+        loginError.textContent = 'Используйте только латинские буквы и цифры.';
+        loginInput.setAttribute('aria-invalid', 'true');
+        isValid = false;
+      }
+
+      if (password.length < 6) {
+        passwordError.textContent = 'Пароль должен содержать не менее 6 символов.';
+        passwordInput.setAttribute('aria-invalid', 'true');
+        isValid = false;
+      }
+
+      if (!isValid) {
+        const firstInvalid = form.querySelector('[aria-invalid="true"]');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Проверка…';
+
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ login: login, password: password })
+        });
+
+        if (response.status === 200) {
+          window.location.href = '/admin';
+          return;
+        }
+
+        formError.textContent = response.status === 401
+          ? 'Неверный логин или пароль'
+          : 'Не удалось выполнить вход. Попробуйте ещё раз.';
+        formError.hidden = false;
+      } catch (error) {
+        formError.textContent = 'Не удалось выполнить вход. Проверьте подключение и попробуйте ещё раз.';
+        formError.hidden = false;
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Войти <span class="submit-arrow" aria-hidden="true">→</span>';
+      }
+    });
+  </script>
+</body>
+</html>

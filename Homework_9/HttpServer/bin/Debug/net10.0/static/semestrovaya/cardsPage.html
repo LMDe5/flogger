@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="description" content="Каталог карточек персонажей и скрытых ролей игры «Тайный Грааль».">
+  <title>Все карточки — Тайный Грааль</title>
+  <link rel="stylesheet" href="semestrovaya/styles.css">
+  <style>
+    .catalog-intro { padding: 58px 0 28px; }
+    .catalog-intro h1 { margin: 0; color: var(--text); font-size: clamp(42px, 5.5vw, 64px); letter-spacing: -.04em; line-height: 1.08; }
+    .catalog-intro h1 span { color: var(--gold-light); }
+    .catalog-intro__description { max-width: 660px; margin: 14px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+
+    .catalog-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 11px 0 24px; }
+    .filter-button {
+      min-height: 36px;
+      padding: 0 15px;
+      border: 1px solid rgba(201, 167, 109, .33);
+      color: #c5beaf;
+      background: rgba(16, 16, 20, .75);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: .08em;
+      cursor: pointer;
+      transition: color .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .filter-button:hover,
+    .filter-button[aria-pressed="true"] {
+      border-color: var(--gold);
+      color: #17130e;
+      background: var(--gold-light);
+      box-shadow: 0 0 17px rgba(201, 167, 109, .15);
+    }
+
+    .cards-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 19px; padding-bottom: 72px; }
+    .card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(201, 167, 109, .2);
+      background: linear-gradient(155deg, rgba(24, 24, 30, .97), rgba(14, 14, 18, .98));
+      box-shadow: 0 10px 27px rgba(0, 0, 0, .19);
+      transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(226, 197, 140, .78);
+      box-shadow: 0 0 0 1px rgba(201, 167, 109, .1), 0 0 27px rgba(201, 167, 109, .18), 0 18px 38px rgba(0, 0, 0, .32);
+    }
+
+    .card:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    .card[hidden] { display: none; }
+    .card__image-wrap { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: linear-gradient(145deg, #293039, #13171d 68%, #0b0d11); }
+    .card__image-wrap::after { content: ""; position: absolute; inset: 52% 0 0; pointer-events: none; background: linear-gradient(0deg, rgba(8, 9, 12, .48), transparent); }
+    .card__image { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease, filter .45s ease; }
+    .card:hover .card__image { transform: scale(1.04); filter: brightness(1.06); }
+    .card__body { display: flex; flex: 1; flex-direction: column; padding: 17px 18px 18px; }
+    .card__title { margin: 0 0 12px; color: var(--text); font-size: 22px; letter-spacing: -.02em; line-height: 1.25; }
+    .card__badges { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-bottom: 15px; }
+    .card__ability { display: flex; flex-wrap: wrap; gap: 5px; margin: auto 0 0; padding-top: 12px; border-top: 1px solid rgba(201, 167, 109, .12); color: #d5c7a7; font-size: 11px; line-height: 1.55; }
+    .card__ability-label { color: #817d75; }
+    .card__ability-value { color: var(--gold-light); font-family: var(--serif); font-size: 14px; }
+
+    @media (max-width: 960px) {
+      .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .catalog-intro { padding: 43px 0 23px; }
+      .catalog-intro h1 { font-size: 44px; }
+      .catalog-intro__description { font-size: 12px; }
+      .catalog-filters { gap: 6px; margin-bottom: 19px; }
+      .filter-button { min-height: 34px; padding-inline: 11px; font-size: 9px; }
+      .cards-grid { grid-template-columns: 1fr; gap: 15px; padding-bottom: 54px; }
+      .card__image-wrap { aspect-ratio: 16 / 9; }
+      .card__body { padding: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Тайный Грааль — база знаний">
+        <span class="brand__seal">✦</span>
+        <span class="brand__text"><strong>Тайный Грааль</strong><small>БАЗА ЗНАНИЙ</small></span>
+      </a>
+      <a class="button button--secondary" href="/admin">Админ-панель</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="catalog-intro" aria-labelledby="catalog-title">
+      <p class="eyebrow">АРХИВ ИГРЫ</p>
+      <h1 id="catalog-title">Все <span>карточки</span></h1>
+      <p class="catalog-intro__description">Изучайте роли, принадлежность и способности персонажей. В этом королевстве каждый выбор может изменить ход игры.</p>
+    </section>
+
+    <section aria-label="Каталог карточек">
+      <div class="catalog-filters" role="group" aria-label="Фильтр по принадлежности">
+        <button class="filter-button" type="button" data-filter="all" aria-pressed="true">Все</button>
+        <button class="filter-button" type="button" data-filter="Добро" aria-pressed="false">Добро</button>
+        <button class="filter-button" type="button" data-filter="Зло" aria-pressed="false">Зло</button>
+        <button class="filter-button" type="button" data-filter="Нейтрал" aria-pressed="false">Нейтралы</button>
+      </div>
+
+      <div class="cards-grid">
+$foreach(var card in Cards)
+        <a href="/cards/view?id=${CardId}" class="card">
+          <div class="card__image-wrap">
+            <img class="card__image" src="${CardImage}" alt="${CardName}" loading="lazy" decoding="async">
+          </div>
+          <div class="card__body">
+            <h2 class="card__title">${CardName}</h2>
+            <div class="card__badges">
+              <span class="type-badge">${CardType}</span>
+              <span class="alignment-badge" data-alignment="${CardAlignment}">${CardAlignment}</span>
+            </div>
+            <p class="card__ability">
+              <span class="card__ability-label">Способность:</span>
+              <span class="card__ability-value">${CardAbility}</span>
+            </p>
+          </div>
+        </a>
+$endfor
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="/" aria-label="Тайный Грааль — база знаний">
+        <span class="brand__seal">✦</span>
+        <span class="brand__text"><strong>Тайный Грааль</strong><small>БАЗА ЗНАНИЙ</small></span>
+      </a>
+      <p class="footer-note">Доверие решает больше, чем сила.</p>
+    </div>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const cards = document.querySelectorAll('.cards-grid .card');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((item) => item.setAttribute('aria-pressed', 'false'));
+        button.setAttribute('aria-pressed', 'true');
+
+        const selectedFilter = button.dataset.filter;
+        cards.forEach((card) => {
+          const badge = card.querySelector('.alignment-badge');
+          const alignment = badge ? badge.dataset.alignment : '';
+          card.hidden = selectedFilter !== 'all' && alignment !== selectedFilter;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

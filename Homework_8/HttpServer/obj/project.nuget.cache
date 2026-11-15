@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "dgSpecHash": "vr1fDSgqO6g=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\HttpServer\\MiniHttpServer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amir_\\.nuget\\packages\\bouncycastle.cryptography\\2.7.0\\bouncycastle.cryptography.2.7.0.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\htmlagilitypack\\1.13.1\\htmlagilitypack.1.13.1.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\mailkit\\4.18.1\\mailkit.4.18.1.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0\\microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.0\\microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\mimekit\\4.18.1\\mimekit.4.18.1.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\npgsql\\10.0.3\\npgsql.10.0.3.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\servicestack.interfaces\\10.4.2\\servicestack.interfaces.10.4.2.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\system.data.sqlclient\\4.9.1\\system.data.sqlclient.4.9.1.nupkg.sha512",
+    "C:\\Users\\amir_\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.0\\system.security.cryptography.pkcs.10.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "У пакета \"System.Security.Cryptography.Pkcs\" 10.0.0 есть известная уязвимость https://github.com/advisories/GHSA-2fmv-rv2c-59x7 (уровень серьезности: средний уровень)",
+      "projectPath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\HttpServer\\MiniHttpServer.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\HttpServer\\MiniHttpServer.csproj",
+      "libraryId": "System.Security.Cryptography.Pkcs",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "У пакета \"System.Security.Cryptography.Pkcs\" 10.0.0 есть известная уязвимость https://github.com/advisories/GHSA-846f-f764-76mx (уровень серьезности: высокий уровень)",
+      "projectPath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\HttpServer\\MiniHttpServer.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\HttpServer\\MiniHttpServer.csproj",
+      "libraryId": "System.Security.Cryptography.Pkcs",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}
