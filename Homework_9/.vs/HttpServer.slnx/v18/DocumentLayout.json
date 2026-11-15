@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7541C58E-AD98-3B3C-7D5C-7C8ABFD6A37B}|MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj|c:\\users\\user\\documents\\github\\flogger\\homework_9\\minihttpserver.framework.unittests\\minihttpserver.framework.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7541C58E-AD98-3B3C-7D5C-7C8ABFD6A37B}|MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj|solutionrelative:minihttpserver.framework.unittests\\minihttpserver.framework.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9A4F3F5-F029-8302-6665-D6B588668C4E}|HttpServer\\MiniHttpServer.csproj|c:\\users\\user\\documents\\github\\flogger\\homework_9\\httpserver\\minihttpserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A9A4F3F5-F029-8302-6665-D6B588668C4E}|HttpServer\\MiniHttpServer.csproj|solutionrelative:httpserver\\minihttpserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DEF6267-F2F6-4384-9C28-BEE7C7DD61A4}|HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj|c:\\users\\user\\documents\\github\\flogger\\homework_9\\htmltemplate.unittests\\htmltemplate.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4DEF6267-F2F6-4384-9C28-BEE7C7DD61A4}|HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj|solutionrelative:htmltemplate.unittests\\htmltemplate.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6DD1E8F-90E2-0278-D83C-6BD0694D3995}|MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj|c:\\users\\user\\documents\\github\\flogger\\homework_9\\minihttpserver.orm.unittests\\minihttpserver.orm.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B6DD1E8F-90E2-0278-D83C-6BD0694D3995}|MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj|solutionrelative:minihttpserver.orm.unittests\\minihttpserver.orm.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9A4F3F5-F029-8302-6665-D6B588668C4E}|HttpServer\\MiniHttpServer.csproj|c:\\users\\user\\documents\\github\\flogger\\homework_9\\httpserver\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9A4F3F5-F029-8302-6665-D6B588668C4E}|HttpServer\\MiniHttpServer.csproj|solutionrelative:httpserver\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MiniHttpServer.ORM.UnitTests",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj",
+              "RelativeDocumentMoniker": "MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj",
+              "RelativeToolTip": "MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-15T10:24:49.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MiniHttpServer.Framework.UnitTests",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj",
+              "RelativeDocumentMoniker": "MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj",
+              "RelativeToolTip": "MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-15T10:24:47.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MiniHttpServer",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\HttpServer\\MiniHttpServer.csproj",
+              "RelativeDocumentMoniker": "HttpServer\\MiniHttpServer.csproj",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\HttpServer\\MiniHttpServer.csproj",
+              "RelativeToolTip": "HttpServer\\MiniHttpServer.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-15T10:24:44.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HtmlTemplate.UnitTests",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj",
+              "RelativeDocumentMoniker": "HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj",
+              "RelativeToolTip": "HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-15T10:24:29.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\HttpServer\\Controllers\\PlayerController.cs",
+              "RelativeDocumentMoniker": "HttpServer\\Controllers\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_9\\HttpServer\\Controllers\\PlayerController.cs",
+              "RelativeToolTip": "HttpServer\\Controllers\\PlayerController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA3wB0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T10:23:24.788Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

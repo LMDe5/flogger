@@ -1,16 +1,24 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Статистика игрока</title>
-</head>
-<body>
-    <div class="player">
-        <h1>Статистика игрока</h1>
-
-        <div class="row"><span>ID</span><span>${Id}</span></div>
-        <div class="row"><span>Имя</span><span>${Name}</span></div>
-        <div class="row"><span>Уровень</span><span>${Level}</span></div>
-    </div>
-</body>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+			<title>Игроки</title>
+	</head>
+	<body>
+		<h1>Список игроков</h1>
+		<table border="1" cellpadding="6" cellspacing="0">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Level</th>
+			</tr>
+			$foreach (var p in Players)
+			<tr>
+				<td>${Id}</td>
+				<td>${Name}</td>
+				<td>${Level}</td>
+			</tr>
+			$endfor
+		</table>
+	</body>
 </html>

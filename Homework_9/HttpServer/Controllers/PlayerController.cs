@@ -26,7 +26,7 @@ namespace HttpServer.Controllers
         {
             var res = ormContext.GetAllAsync<Player>("players").GetAwaiter().GetResult();
 
-            return Json(res);
+            return Html("Templates/Player.html", new { Players = res });
             //http://127.0.0.1:8888/user/Getall
         }
 

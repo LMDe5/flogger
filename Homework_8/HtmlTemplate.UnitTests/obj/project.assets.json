@@ -2291,24 +2291,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\amir_\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_8\\HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj",
       "projectName": "HtmlTemplate.UnitTests",
-      "projectPath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj",
-      "packagesPath": "C:\\Users\\amir_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\HtmlTemplate.UnitTests\\obj\\",
+      "projectPath": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_8\\HtmlTemplate.UnitTests\\HtmlTemplate.UnitTests.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_8\\HtmlTemplate.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2323,8 +2318,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\ConsoleApp\\ConsoleApp.csproj": {
-              "projectPath": "C:\\Users\\amir_\\OneDrive\\Документы\\GitHub\\flogger\\Homework_8\\ConsoleApp\\ConsoleApp.csproj"
+            "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_8\\ConsoleApp\\ConsoleApp.csproj": {
+              "projectPath": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Homework_8\\ConsoleApp\\ConsoleApp.csproj"
             }
           }
         }
