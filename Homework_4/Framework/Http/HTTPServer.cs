@@ -53,6 +53,7 @@ namespace HttpServer.Framework.Http
             serverRuns = true;
 
             server.Start();
+            Console.WriteLine($"сервер начал работу по: http://{settings.Host}:{settings.Port}/");
         }
 
         public void Stop()

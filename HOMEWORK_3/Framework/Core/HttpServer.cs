@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
+﻿using System.Net;
 using System.Text.Json;
-using System.IO;
 
 namespace HttpServer.framework.core
 {
@@ -39,6 +35,7 @@ namespace HttpServer.framework.core
             serverRuns = true;
 
             server.Start();
+            Console.WriteLine($"сервер начал работу по: http://{settings.Host}:{settings.Port}/{settings.Path}/");
         }
 
         public void Stop()

@@ -39,6 +39,7 @@ namespace HttpServer.framework.core
             serverRuns = true;
 
             server.Start();
+            Console.WriteLine($"сервер начал работу по адресу: http://{settings.Host}:{settings.Port}/connection");
         }
 
         public void Stop()
