@@ -31,10 +31,6 @@ namespace HttpServer.Framework.Handlers
 
                 var assembly = Assembly.GetExecutingAssembly();
 
-                //        internal Assembly ControllerAssembly { get; set; } = Assembly.GetExecutingAssembly();
-                //ЭТА ЗАЛУПА ДАЕТ ОШИБКУ КОМПИЛЯЦИИ ЕБЕНЬ НА ДИПСИКЕ БЛЯТЬ
-                //var controller = ControllerAssembly.GetTypes()...
-
                 //ну а тут я получаю auth, steam и тд 
                 string controllerName = context.Request.Url.Segments[1].Replace("/", "").ToLower();
                 var controller = assembly.GetTypes().Where(t => Attribute.IsDefined(t, typeof(HttpControllerAttribute))).FirstOrDefault(c => { var attr = c.GetCustomAttribute<HttpControllerAttribute>(); return attr != null && attr.Route.ToLower() == controllerName; });
