@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+				<meta name="theme-color" content="#0a0a0c">
+					<meta name="description" content="Создание и редактирование карточек вики «Тайный Грааль».">
+						<title>Редактор карточки — Панель управления</title>
+						<link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+							<link rel="stylesheet" href="/semestrovaya/styles.css">
+								<script src="https://cdn.quilljs.com/1.3.6/quill.js" defer=""></script>
+								<style>
+									.editor-heading { margin: 0 0 24px; }
+									.editor-heading .eyebrow { margin-bottom: 9px; }
+									.editor-heading h1 { margin: 0; color: var(--text); font-family: var(--serif); font-size: clamp(35px, 4.4vw, 50px); font-weight: 400; letter-spacing: -.04em; line-height: 1.12; }
+									.editor-heading h1 span { color: var(--gold-light); }
+									.form-panel { max-width: 930px; padding: clamp(19px, 3vw, 31px); border: 1px solid rgba(201, 167, 109, .2); background: radial-gradient(ellipse at 100% 0, rgba(201, 167, 109, .055), transparent 38%), linear-gradient(145deg, rgba(20, 20, 26, .97), rgba(13, 13, 17, .98)); box-shadow: 0 18px 45px rgba(0, 0, 0, .23); animation: form-appear .65s .05s ease-out both; }
+									.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 21px 20px; }
+									.field { min-width: 0; }
+									.field--full { grid-column: 1 / -1; }
+									.field__label { display: block; margin-bottom: 8px; color: #d7d0c3; font-family: var(--serif); font-size: 15px; }
+									.required-mark { color: var(--gold-light); }
+									.field__control { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(201, 167, 109, .22); border-radius: 0; color: var(--text); background: #101015; font-size: 12px; transition: border-color .2s ease, box-shadow .2s ease; }
+									.field__control::placeholder { color: #6d6a65; }
+									.field__control:focus { border-color: rgba(201, 167, 109, .72); outline: none; box-shadow: 0 0 0 3px rgba(201, 167, 109, .08); }
+									.field__control[aria-invalid="true"] { border-color: rgba(208, 101, 108, .8); box-shadow: 0 0 0 2px rgba(180, 61, 69, .1); }
+									select.field__control { appearance: none; padding-right: 38px; background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 17px) 19px, calc(100% - 12px) 19px; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+									select.field__control option { color: var(--text); background: #111116; }
+									.field-error { display: block; margin-top: 5px; color: #e29296; font-size: 10px; line-height: 1.45; }
+									.field-error:empty { display: none; }
+
+									/* Quill */
+									#editor { min-height: 190px; border: 1px solid rgba(201, 167, 109, .3); background: #101015; }
+									.ql-toolbar.ql-snow { border: 1px solid rgba(201, 167, 109, .3) !important; background: #17171d; }
+									.ql-container.ql-snow { border: 1px solid rgba(201, 167, 109, .3) !important; border-top: 0 !important; color: var(--text); background: #101015; font-family: Arial, sans-serif; font-size: 13px; }
+									.ql-snow .ql-stroke { stroke: #cdb579 !important; }
+									.ql-snow .ql-fill { fill: #cdb579 !important; }
+									.ql-snow .ql-picker, .ql-snow .ql-picker-label { color: #d8cfbd !important; }
+									.ql-snow .ql-picker-label { border-color: transparent !important; }
+									.ql-snow .ql-picker-options { border: 1px solid rgba(201, 167, 109, .36) !important; background: #17171d !important; }
+									.ql-snow .ql-picker-item { color: #ddd5c5 !important; }
+									.ql-snow .ql-picker-item:hover, .ql-snow .ql-picker-item.ql-selected, .ql-snow .ql-picker-label:hover, .ql-snow .ql-picker-label.ql-active { color: var(--gold-light) !important; }
+									.ql-snow .ql-toolbar button:hover .ql-stroke, .ql-snow .ql-toolbar button.ql-active .ql-stroke { stroke: var(--gold-light) !important; }
+									.ql-snow .ql-toolbar button:hover .ql-fill, .ql-snow .ql-toolbar button.ql-active .ql-fill { fill: var(--gold-light) !important; }
+									.ql-snow .ql-toolbar button:hover, .ql-snow .ql-toolbar button.ql-active { background: rgba(201, 167, 109, .1); }
+									.ql-snow .ql-editor { min-height: 190px; color: #e8e3d9; line-height: 1.7; }
+									.ql-snow .ql-editor.ql-blank::before { color: #77736d; font-style: italic; }
+									.ql-snow .ql-editor a { color: var(--gold-light); }
+									.ql-snow .ql-tooltip { border: 1px solid rgba(201, 167, 109, .42) !important; color: var(--text) !important; background: #17171d !important; box-shadow: 0 8px 25px rgba(0, 0, 0, .4) !important; }
+									.ql-snow .ql-tooltip input[type="text"] { border: 1px solid rgba(201, 167, 109, .35) !important; color: var(--text) !important; background: #0d0d11 !important; }
+									.ql-snow .ql-tooltip a { color: var(--gold-light) !important; }
+
+									.description-meta { display: flex; justify-content: flex-end; margin-top: 7px; color: #858078; font-size: 10px; letter-spacing: .035em; }
+									.character-counter.is-over-limit { color: #e29296; }
+
+									.notice { display: flex; align-items: center; gap: 10px; margin-top: 20px; padding: 12px 14px; border: 1px solid; font-size: 12px; }
+									.notice[hidden] { display: none !important; }
+									.notice--success { border-color: rgba(105, 174, 125, .5); color: #b7dfc1; background: rgba(42, 99, 59, .18); }
+									.notice--error { border-color: rgba(197, 88, 96, .55); color: #e8adb0; background: rgba(112, 32, 39, .19); }
+									.notice__icon { font-size: 15px; line-height: 1; }
+									.form-actions { display: flex; align-items: center; justify-content: flex-end; gap: 11px; margin-top: 24px; padding-top: 19px; border-top: 1px solid rgba(201, 167, 109, .13); }
+									.form-actions .button { min-width: 116px; min-height: 43px; font-size: 10px; letter-spacing: .1em; }
+									.form-actions .button:disabled { opacity: .65; cursor: wait; transform: none; }
+
+									@keyframes form-appear { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+									@media (max-width: 640px) {
+									.form-grid { grid-template-columns: 1fr; gap: 17px; }
+									.field--full { grid-column: auto; }
+									.form-actions { flex-direction: column-reverse; align-items: stretch; }
+									.form-actions .button { width: 100%; }
+									.ql-toolbar.ql-snow { padding: 6px; }
+									}
+								</style>
+							</head>
+	<body>
+		<div class="admin-shell">
+			<aside class="admin-sidebar">
+				<a class="brand" href="/" aria-label="Тайный Грааль — панель управления">
+					<span class="brand__seal" aria-hidden="true">✦</span>
+					<span class="brand__text">
+						<strong>Тайный Грааль</strong>
+						<small>ПАНЕЛЬ УПРАВЛЕНИЯ</small>
+					</span>
+				</a>
+				<p class="admin-sidebar__label">Управление</p>
+				<nav class="admin-nav" aria-label="Разделы панели управления">
+					<a class="admin-nav__link" href="/admin">
+						<span class="admin-nav__icon" aria-hidden="true">⌂</span>
+						<span>Дашборд</span>
+					</a>
+					<a class="admin-nav__link is-active" href="/admin/cards" aria-current="page">
+						<span class="admin-nav__icon" aria-hidden="true">✧</span>
+						<span>Карточки</span>
+					</a>
+				</nav>
+				<div class="admin-sidebar__grow"></div>
+			</aside>
+
+			<main class="admin-main">
+				<div class="admin-breadcrumb">
+					Панель управления <span>/</span> Редактор карточки
+				</div>
+				<section class="editor-heading" aria-labelledby="editor-title">
+					<p class="eyebrow">АРХИВ ИГРЫ</p>
+					<h1 id="editor-title">
+						Редактор <span>карточки</span>
+					</h1>
+				</section>
+
+				<section class="form-panel" aria-label="Форма карточки">
+					<form id="card-form" novalidate="">
+						<input type="hidden" id="card-id" name="CardId" value="${CardId}">
+
+							<div class="form-grid">
+								<div class="field">
+									<label class="field__label" for="card-name">
+										Название <span class="required-mark">*</span>
+									</label>
+									<input class="field__control" type="text" id="card-name" name="CardName" value="${CardName}" autocomplete="off">
+										<span class="field-error" id="card-name-error"></span>
+									</div>
+
+								<div class="field">
+									<label class="field__label" for="card-type">Тип</label>
+									<select class="field__control" id="card-type" name="CardType">
+										<option value="Персонаж">Персонаж</option>
+										<option value="Реликвия">Реликвия</option>
+										<option value="Место">Место</option>
+										<option value="Орден">Орден</option>
+									</select>
+								</div>
+
+								<div class="field">
+									<label class="field__label" for="card-alignment">Принадлежность</label>
+									<select class="field__control" id="card-alignment" name="CardAlignment">
+										<option value="Добро">Добро</option>
+										<option value="Зло">Зло</option>
+										<option value="Нейтрал">Нейтрал</option>
+									</select>
+								</div>
+
+								<div class="field">
+									<label class="field__label" for="card-ability">
+										Способность <span class="required-mark">*</span>
+									</label>
+									<input class="field__control" type="text" id="card-ability" name="CardAbility" value="${CardAbility}" autocomplete="off">
+										<span class="field-error" id="card-ability-error"></span>
+									</div>
+
+								<div class="field field--full">
+									<label class="field__label" for="editor">Описание</label>
+									<div id="editor"></div>
+									<textarea id="description-field" name="CardDescription" hidden=""></textarea>
+									<div class="description-meta">
+										<span class="character-counter" id="character-counter">Символов: 0 / 500</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="notice" id="form-notice" hidden=""></div>
+
+							<div class="form-actions">
+								<a class="button button--secondary" href="/admin/cards">Отмена</a>
+								<button class="button button--primary" id="save-button" type="submit">Сохранить</button>
+							</div>
+						</form>
+				</section>
+			</main>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+			const form = document.getElementById('card-form');
+			const nameInput = document.getElementById('card-name');
+			const abilityInput = document.getElementById('card-ability');
+			const nameError = document.getElementById('card-name-error');
+			const abilityError = document.getElementById('card-ability-error');
+			const editorElement = document.getElementById('editor');
+			const counter = document.getElementById('character-counter');
+			const descriptionField = document.getElementById('description-field');
+			const notice = document.getElementById('form-notice');
+			const saveButton = document.getElementById('save-button');
+
+			let quill = new Quill(editorElement, {
+			theme: 'snow',
+			placeholder: 'Введите описание карточки…',
+			modules: {
+			toolbar: [
+			[{ header: [2, 3, false] }],
+			['bold', 'italic', 'underline'],
+			[{ list: 'ordered' }, { list: 'bullet' }],
+			['link', 'clean']
+			]
+			}
+			});
+
+			const initialDescription = "${CardDescription}";
+			if (initialDescription && initialDescription !== "${CardDescription}") {
+			quill.clipboard.dangerouslyPasteHTML(initialDescription);
+			}
+
+			function updateCounter() {
+			const text = quill.getText().trimEnd();
+			const count = text.length;
+			counter.textContent = 'Символов: ' + count + ' / 500';
+			descriptionField.value = quill.root.innerHTML;
+			}
+
+			quill.on('text-change', updateCounter);
+			updateCounter();
+
+			form.addEventListener('submit', async function (event) {
+			event.preventDefault();
+			notice.hidden = true;
+			nameError.textContent = '';
+			abilityError.textContent = '';
+
+			let isValid = true;
+			if (!nameInput.value.trim()) {
+			nameError.textContent = 'Введите название карточки.';
+			isValid = false;
+			}
+			if (!abilityInput.value.trim()) {
+			abilityError.textContent = 'Введите способность.';
+			isValid = false;
+			}
+			if (!isValid) return;
+
+			updateCounter();
+
+			const urlParams = new URLSearchParams(window.location.search);
+			const cardId = urlParams.get('id') || '0';
+
+			const url = (cardId && cardId !== "0") ? '/admin/update' : '/admin/create';
+
+			const formData = new FormData(form);
+			
+			formData.append('CardId', cardId);
+			formData.append('CardDescription', descriptionField.value);
+
+			const urlEncodedData = new URLSearchParams(formData).toString();
+
+			saveButton.disabled = true;
+			saveButton.textContent = 'Сохранение…';
+
+			try {
+			const response = await fetch(url, {
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			body: urlEncodedData
+			});
+
+			if (!response.ok) throw new Error('Request failed');
+
+			notice.className = 'notice notice--success';
+			notice.innerHTML = '<span class="notice__icon">✦</span><span>Успешно сохранено!</span>';
+			notice.hidden = false;
+
+			setTimeout(() => window.location.href = '/admin/cards', 50);
+			} catch (error) {
+			notice.className = 'notice notice--error';
+			notice.innerHTML = '<span class="notice__icon">✕</span><span>Ошибка при сохранении.</span>';
+			notice.hidden = false;
+			} finally {
+			saveButton.disabled = false;
+			saveButton.textContent = 'Сохранить';
+			}
+			});
+			});
+		</script>
+	</body>
+</html>

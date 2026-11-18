@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="description" content="Свод правил настольной игры «Тайный Грааль». Подготовка, ход игры и условия победы.">
+  <title>Свод правил — Тайный Грааль</title>
+  <link rel="stylesheet" href="/semestrovaya/styles.css">
+  <style>
+    .rules-heading { padding: 58px 0 34px; }
+    .rules-heading h1 { margin: 0; color: var(--text); font-size: clamp(42px, 6vw, 68px); letter-spacing: -.045em; line-height: 1.05; }
+    .rules-heading h1 span { color: var(--gold-light); }
+    .rules-heading__intro { max-width: 650px; margin: 15px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+
+    .rules-layout { display: grid; grid-template-columns: 235px minmax(0, 1fr); align-items: start; gap: clamp(28px, 5vw, 62px); padding-bottom: 72px; }
+    .rules-toc { position: sticky; top: 22px; padding: 18px 16px; border: 1px solid rgba(201, 167, 109, .2); background: linear-gradient(145deg, rgba(21, 21, 27, .94), rgba(13, 13, 17, .88)); }
+    .rules-toc__title { margin: 0 0 11px; color: #89847a; font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .rules-toc nav { display: grid; gap: 4px; }
+    .rules-toc a { position: relative; display: block; padding: 8px 7px 8px 15px; color: #bbb6ac; font-size: 11px; transition: color .2s ease, background .2s ease; }
+    .rules-toc a::before { content: ""; position: absolute; top: 50%; left: 2px; width: 4px; height: 4px; border: 1px solid var(--gold); transform: translateY(-50%) rotate(45deg); }
+    .rules-toc a:hover { color: var(--gold-light); background: rgba(201, 167, 109, .055); }
+
+    .rules-content { min-width: 0; }
+    .rule-section { padding-bottom: 32px; scroll-margin-top: 24px; }
+    .rule-section + .rule-section, .faq-section { padding-top: 28px; border-top: 1px solid rgba(201, 167, 109, .14); }
+    .rule-section__heading { display: flex; align-items: baseline; gap: 13px; margin: 0 0 14px; }
+    .rule-section__number { color: rgba(201, 167, 109, .67); font-family: var(--serif); font-size: 13px; letter-spacing: .08em; }
+    .rule-section__heading h2 { margin: 0; color: var(--text); font-size: clamp(25px, 3vw, 33px); letter-spacing: -.025em; line-height: 1.2; }
+    .rule-section > p { margin: 0 0 13px; color: #b9b5ad; font-size: 13px; line-height: 1.85; }
+    .rule-note { margin: 18px 0 0; padding: 14px 17px; border-left: 2px solid var(--gold); color: #c9c0ad; background: linear-gradient(90deg, rgba(201, 167, 109, .09), rgba(201, 167, 109, .015)); font-family: var(--serif); font-size: 14px; font-style: italic; }
+
+    .phase-list { display: grid; gap: 10px; margin-top: 17px; }
+    .phase { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 13px; padding: 15px; border: 1px solid rgba(201, 167, 109, .15); background: linear-gradient(120deg, rgba(22, 22, 28, .9), rgba(15, 15, 19, .72)); }
+    .phase__number { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid rgba(201, 167, 109, .42); border-radius: 50%; color: var(--gold-light); font-family: var(--serif); font-size: 13px; }
+    .phase h3 { margin: 0 0 4px; color: #e4d4b2; font-size: 17px; }
+    .phase p { margin: 0; color: #aaa69e; font-size: 12px; line-height: 1.8; }
+    .phase strong { color: #d9c69e; }
+
+    .victory-list { display: grid; gap: 9px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .victory-list li { position: relative; padding: 11px 14px 11px 34px; border: 1px solid rgba(201, 167, 109, .14); color: #b9b5ad; background: rgba(20, 20, 25, .64); font-size: 12px; }
+    .victory-list li::before { content: "✦"; position: absolute; top: 10px; left: 13px; color: var(--gold); font-size: 11px; }
+
+    .faq-section { scroll-margin-top: 24px; }
+    .faq-list { display: grid; gap: 9px; margin-top: 17px; }
+    .faq-item { border: 1px solid rgba(201, 167, 109, .2); background: linear-gradient(145deg, rgba(20, 20, 25, .92), rgba(13, 13, 17, .85)); transition: border-color .2s ease, background .2s ease; }
+    .faq-item[open] { border-color: rgba(201, 167, 109, .45); background: rgba(21, 20, 24, .96); }
+    .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 16px; color: #e5ddce; font-family: var(--serif); font-size: 16px; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--gold-light); font-family: var(--sans); font-size: 20px; line-height: 1; }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-answer { margin: 0; padding: 0 16px 15px; color: #aaa69e; font-size: 12px; line-height: 1.85; }
+
+    @media (max-width: 760px) {
+      .rules-heading { padding: 42px 0 26px; }
+      .rules-layout { grid-template-columns: 1fr; gap: 22px; padding-bottom: 54px; }
+      .rules-toc { position: static; }
+      .rules-toc nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 520px) {
+      .rules-heading { padding: 34px 0 22px; }
+      .rules-heading h1 { font-size: 46px; }
+      .rules-heading__intro { font-size: 12px; }
+      .rules-toc nav { grid-template-columns: 1fr; }
+      .rule-section__heading { gap: 9px; }
+      .rule-section__heading h2 { font-size: 26px; }
+      .phase { grid-template-columns: 30px minmax(0, 1fr); gap: 10px; padding: 13px 11px; }
+      .phase__number { width: 28px; height: 28px; }
+      .faq-item summary { padding: 12px; font-size: 15px; }
+      .faq-answer { padding-inline: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Тайный Грааль — база знаний">
+        <span class="brand__seal">✦</span>
+        <span class="brand__text"><strong>Тайный Грааль</strong><small>БАЗА ЗНАНИЙ</small></span>
+      </a>
+      <a class="button button--secondary" href="/">На главную</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="rules-heading" aria-labelledby="rules-title">
+      <p class="eyebrow">ПРАВИЛА И ПОРЯДОК ИГРЫ</p>
+      <h1 id="rules-title">Свод <span>правил</span></h1>
+      <p class="rules-heading__intro">Соберите союзников, доверьтесь интуиции и помните: в походе важны не только решения, но и те, кто их принимает.</p>
+    </section>
+
+    <div class="rules-layout">
+      <aside class="rules-toc" aria-label="Навигация по разделам правил">
+        <p class="rules-toc__title">Содержание</p>
+        <nav>
+          <a href="#preparation">Подготовка к игре</a>
+          <a href="#turn">Ход игры</a>
+          <a href="#victory">Победа</a>
+          <a href="#faq">Частые вопросы</a>
+        </nav>
+      </aside>
+
+      <div class="rules-content">
+        <section class="rule-section" id="preparation" aria-labelledby="preparation-title">
+          <div class="rule-section__heading">
+            <span class="rule-section__number">I</span>
+            <h2 id="preparation-title">Подготовка к игре</h2>
+          </div>
+          <p>До начала партии игроки тайно делятся на сторонников Добра и Зла. Истинная принадлежность каждого — секрет, который предстоит раскрыть в ходе игры.</p>
+          <p>Каждый игрок получает карту персонажа с особой способностью. Ознакомьтесь со своей ролью и не раскрывайте её, если этого не требует способность или правило.</p>
+          <p>Перед первым раундом определяется первый лидер. Он будет собирать отряд для похода.</p>
+          <div class="rule-note">Доверие — ваш главный ресурс. Слова могут объединить отряд, но поступки расскажут правду.</div>
+        </section>
+
+        <section class="rule-section" id="turn" aria-labelledby="turn-title">
+          <div class="rule-section__heading">
+            <span class="rule-section__number">II</span>
+            <h2 id="turn-title">Ход игры</h2>
+          </div>
+          <p>Игра состоит из раундов. Каждый раунд проходит в три последовательные фазы:</p>
+          <div class="phase-list">
+            <article class="phase">
+              <span class="phase__number" aria-hidden="true">1</span>
+              <div>
+                <h3>Сбор отряда</h3>
+                <p>Лидер обсуждает с игроками, кто достоин отправиться в поход, и назначает участников. Остальные могут убеждать, сомневаться и предлагать свой выбор.</p>
+              </div>
+            </article>
+            <article class="phase">
+              <span class="phase__number" aria-hidden="true">2</span>
+              <div>
+                <h3>Поход</h3>
+                <p>Участники тайно выбирают карту <strong>«Успех»</strong> или <strong>«Провал»</strong>. Сторонники Добра обязаны выбрать «Успех», а сторонники Зла могут действовать по своему усмотрению.</p>
+              </div>
+            </article>
+            <article class="phase">
+              <span class="phase__number" aria-hidden="true">3</span>
+              <div>
+                <h3>Передача лидерства</h3>
+                <p>После завершения похода лидер передаёт жетон следующему игроку, который ещё не был лидером. Затем начинается новый раунд.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="rule-section" id="victory" aria-labelledby="victory-title">
+          <div class="rule-section__heading">
+            <span class="rule-section__number">III</span>
+            <h2 id="victory-title">Победа</h2>
+          </div>
+          <p>Партия заканчивается, когда одна из сторон достигает условия победы:</p>
+          <ul class="victory-list">
+            <li>Добро побеждает, если успешно завершает три похода.</li>
+            <li>Зло побеждает, если саботирует три похода.</li>
+            <li>Добро также побеждает, если раскрывает всех злодеев.</li>
+          </ul>
+        </section>
+
+        <section class="faq-section" id="faq" aria-labelledby="faq-title">
+          <div class="rule-section__heading">
+            <span class="rule-section__number">IV</span>
+            <h2 id="faq-title">Частые вопросы</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Что такое жетон магии?</summary>
+              <p class="faq-answer">Жетон магии отмечает особый ресурс или эффект, если это указано на карте персонажа. Следуйте тексту способности и возвращайте жетон в запас после применения, если карта не предписывает иное.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Может ли злой персонаж выбрать «Успех»?</summary>
+              <p class="faq-answer">Да. Сторонник Зла вправе выбрать «Успех» или «Провал» во время похода. Выбор участника остаётся тайным до общего раскрытия карт.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Когда передаётся жетон лидерства?</summary>
+              <p class="faq-answer">После завершения похода лидер передаёт жетон игроку, который ещё не был лидером. Передача продолжается по этому правилу в следующих раундах.</p>
+            </details>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="/" aria-label="Тайный Грааль — база знаний">
+        <span class="brand__seal">✦</span>
+        <span class="brand__text"><strong>Тайный Грааль</strong><small>БАЗА ЗНАНИЙ</small></span>
+      </a>
+      <p class="footer-note">Слова — туман. Решения — след.</p>
+    </div>
+  </footer>
+</body>
+</html>
