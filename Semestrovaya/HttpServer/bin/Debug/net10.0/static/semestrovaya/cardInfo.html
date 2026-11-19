@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="description" content="Карточка персонажа настольной игры «Тайный Грааль».">
+  <title>${CardName} — Тайный Грааль</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0a0c;
+      --panel: #111116;
+      --text: #eee9df;
+      --muted: #a5a19a;
+      --gold: #c9a76d;
+      --gold-light: #e2c58c;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 72% 12%, rgba(77, 73, 77, .17), transparent 36rem),
+        radial-gradient(ellipse at 20% 70%, rgba(38, 58, 63, .12), transparent 34rem),
+        #0a0a0c;
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 5px; }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header {
+      border-bottom: 1px solid rgba(201, 167, 109, .14);
+      background: rgba(9, 9, 11, .78);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { display: inline-flex; align-items: center; gap: 12px; }
+
+    .brand__seal {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid rgba(201, 167, 109, .78);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-size: 18px;
+      line-height: 1;
+      box-shadow: inset 0 0 15px rgba(201, 167, 109, .1), 0 0 18px rgba(201, 167, 109, .08);
+    }
+
+    .brand__seal::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(201, 167, 109, .36);
+      border-radius: 50%;
+    }
+
+    .brand__text { display: grid; gap: 3px; line-height: 1.2; }
+    .brand__title { font-family: var(--serif); font-size: 18px; letter-spacing: .035em; }
+    .brand__subtitle { color: #827c71; font-size: 8px; font-weight: 700; letter-spacing: .24em; }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      border: 1px solid rgba(201, 167, 109, .42);
+      color: #d7c69f;
+      background: rgba(201, 167, 109, .035);
+      font-size: 11px;
+      letter-spacing: .045em;
+      transition: border-color .2s ease, color .2s ease, background .2s ease;
+    }
+
+    .back-link:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      background: rgba(201, 167, 109, .09);
+    }
+
+    .page-content { padding: 60px 0 74px; animation: fade-in .8s ease-out both; }
+
+    .character-layout {
+      display: grid;
+      grid-template-columns: minmax(300px, .88fr) minmax(0, 1.12fr);
+      align-items: start;
+      gap: clamp(38px, 7vw, 88px);
+    }
+
+    .portrait-column { width: 100%; max-width: 470px; margin-inline: auto; }
+
+    .portrait-frame {
+      position: relative;
+      padding: 10px;
+      border: 1px solid rgba(201, 167, 109, .72);
+      background: linear-gradient(145deg, rgba(201, 167, 109, .14), rgba(201, 167, 109, .025) 48%, rgba(201, 167, 109, .09));
+      box-shadow: 0 0 0 5px rgba(201, 167, 109, .035), 0 0 36px rgba(201, 167, 109, .15), 0 28px 65px rgba(0, 0, 0, .5);
+      transition: box-shadow .35s ease, transform .35s ease;
+    }
+
+    .portrait-frame::before,
+    .portrait-frame::after {
+      content: "✦";
+      position: absolute;
+      z-index: 2;
+      color: var(--gold-light);
+      font-size: 13px;
+      line-height: 1;
+      text-shadow: 0 0 12px rgba(226, 197, 140, .55);
+    }
+
+    .portrait-frame::before { top: 3px; left: 3px; }
+    .portrait-frame::after { right: 3px; bottom: 3px; }
+
+    .portrait-frame:hover {
+      transform: translateY(-3px) rotate(-.35deg);
+      box-shadow: 0 0 0 5px rgba(201, 167, 109, .05), 0 0 48px rgba(201, 167, 109, .24), 0 32px 70px rgba(0, 0, 0, .54);
+    }
+
+    .portrait-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background:
+        radial-gradient(ellipse at 50% 32%, rgba(201, 167, 109, .2), transparent 36%),
+        linear-gradient(145deg, #283039, #12151b 64%, #08090c);
+      filter: saturate(.86) contrast(1.04);
+      transition: transform .45s ease, filter .45s ease;
+    }
+
+    .portrait-frame:hover .portrait-image {
+      transform: scale(1.012);
+      filter: saturate(.96) contrast(1.04) brightness(1.04);
+    }
+
+    .portrait-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 13px;
+      color: #77766f;
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .portrait-caption span:last-child { color: rgba(201, 167, 109, .68); }
+
+    .character-info { padding-top: 9px; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      color: var(--gold-light);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .23em;
+      line-height: 1.5;
+    }
+
+    .eyebrow::before { content: ""; width: 27px; height: 1px; background: var(--gold); }
+
+    h1 {
+      margin: 0;
+      color: #f0eadf;
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.4vw, 68px);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: 1.04;
+      overflow-wrap: anywhere;
+      text-shadow: 0 5px 24px rgba(0, 0, 0, .38);
+    }
+
+    .title-rule {
+      width: 100%;
+      height: 1px;
+      margin: 24px 0 22px;
+      background: linear-gradient(90deg, rgba(201, 167, 109, .65), rgba(201, 167, 109, .08) 75%, transparent);
+    }
+
+    .identity-list { display: grid; gap: 13px; margin: 0 0 25px; }
+
+    .identity-row {
+      display: grid;
+      grid-template-columns: minmax(130px, .4fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 15px;
+    }
+
+    .identity-label {
+      color: #858179;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .type-badge {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 11px;
+      border: 1px solid rgba(201, 167, 109, .38);
+      color: #e1d4b7;
+      background: rgba(201, 167, 109, .07);
+      font-family: var(--serif);
+      font-size: 15px;
+    }
+
+    .type-badge::before { content: "✧"; color: var(--gold); font-size: 13px; }
+
+    .alignment-badge {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid rgba(201, 167, 109, .54);
+      color: var(--gold-light);
+      background: rgba(201, 167, 109, .12);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .alignment-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; box-shadow: 0 0 9px currentColor; }
+
+    .alignment-badge[data-alignment="Добро"] {
+      color: #e2c58c;
+      border-color: rgba(226, 197, 140, .64);
+      background: rgba(201, 167, 109, .14);
+      box-shadow: inset 0 0 14px rgba(201, 167, 109, .06);
+    }
+
+    .alignment-badge[data-alignment="Зло"] {
+      color: #ce898d;
+      border-color: rgba(137, 49, 57, .65);
+      background: rgba(111, 30, 39, .2);
+    }
+
+    .alignment-badge[data-alignment="Нейтрал"] {
+      color: #b6b7bb;
+      border-color: rgba(143, 148, 156, .42);
+      background: rgba(117, 122, 131, .12);
+    }
+
+    .ability-panel {
+      position: relative;
+      margin-top: 27px;
+      padding: 22px 23px 23px;
+      border: 1px solid rgba(201, 167, 109, .2);
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(201, 167, 109, .07), transparent 50%),
+        linear-gradient(145deg, rgba(20, 20, 25, .94), rgba(14, 14, 18, .8));
+    }
+
+    .ability-panel::before,
+    .ability-panel::after {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      border-color: rgba(201, 167, 109, .72);
+      border-style: solid;
+      pointer-events: none;
+    }
+
+    .ability-panel::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+    .ability-panel::after { right: -1px; bottom: -1px; border-width: 0 1px 1px 0; }
+
+    .ability-panel__label {
+      margin: 0 0 8px;
+      color: #8d877b;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .ability-panel h2 {
+      margin: 0 0 12px;
+      color: var(--gold-light);
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: -.02em;
+      line-height: 1.25;
+    }
+
+    .ability-panel__description {
+      margin: 0;
+      color: #b8b5ae;
+      font-size: 13px;
+      line-height: 1.85;
+      white-space: pre-line;
+    }
+
+    .edit-link {
+      min-height: 43px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      margin-top: 23px;
+      padding: 0 17px;
+      border: 1px solid rgba(201, 167, 109, .62);
+      color: var(--gold-light);
+      background: linear-gradient(135deg, rgba(201, 167, 109, .1), rgba(201, 167, 109, .025));
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+
+    .edit-link:hover {
+      transform: translateY(-2px);
+      color: #17130d;
+      background: var(--gold-light);
+      box-shadow: 0 0 22px rgba(201, 167, 109, .2);
+    }
+
+    .edit-link__icon { font-size: 15px; line-height: 1; }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 800px) {
+      .page-content { padding-top: 42px; }
+      .character-layout { grid-template-columns: minmax(240px, .78fr) minmax(0, 1.22fr); gap: 30px; }
+      .portrait-frame { padding: 8px; }
+      .character-info { padding-top: 0; }
+      h1 { font-size: clamp(39px, 6vw, 54px); }
+      .ability-panel { padding: 19px; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: calc(100% - 32px); }
+      .header-inner { min-height: 72px; gap: 12px; }
+      .brand { gap: 9px; }
+      .brand__seal { width: 36px; height: 36px; font-size: 16px; }
+      .brand__title { font-size: 15px; }
+      .brand__subtitle { font-size: 7px; letter-spacing: .18em; }
+      .back-link { gap: 6px; padding: 8px; font-size: 9px; }
+      .page-content { padding: 34px 0 50px; }
+      .character-layout { grid-template-columns: 1fr; gap: 34px; }
+      .portrait-column { max-width: 390px; }
+      .portrait-image { aspect-ratio: 4 / 4.2; }
+      .character-info { padding: 0 2px; }
+      h1 { font-size: clamp(42px, 11vw, 58px); }
+      .identity-row { grid-template-columns: 115px minmax(0, 1fr); gap: 10px; }
+      .ability-panel { margin-top: 23px; padding: 18px; }
+      .ability-panel h2 { font-size: 24px; }
+      .ability-panel__description { font-size: 12px; }
+      .edit-link { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Тайный Грааль — база знаний">
+        <span class="brand__seal" aria-hidden="true">✦</span>
+        <span class="brand__text">
+          <span class="brand__title">Тайный Грааль</span>
+          <span class="brand__subtitle">ВИКИ ИГРЫ</span>
+        </span>
+      </a>
+      <a class="back-link" href="/cards"><span aria-hidden="true">←</span> Назад в базу знаний</a>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <article class="character-layout" aria-labelledby="character-name">
+      <figure class="portrait-column">
+        <div class="portrait-frame">
+          <img class="portrait-image" src="${CardImage}" alt="${CardName}" decoding="async">
+        </div>
+        <figcaption class="portrait-caption">
+          <span>Досье персонажа</span>
+          <span>Тайный Грааль</span>
+        </figcaption>
+      </figure>
+
+      <div class="character-info">
+        <p class="eyebrow">ХРОНИКИ КОРОЛЕВСТВА</p>
+        <h1 id="character-name">${CardName}</h1>
+        <div class="title-rule" aria-hidden="true"></div>
+
+        <dl class="identity-list">
+          <div class="identity-row">
+            <dt class="identity-label">Тип</dt>
+            <dd class="type-badge">${CardType}</dd>
+          </div>
+          <div class="identity-row">
+            <dt class="identity-label">Принадлежность</dt>
+            <dd class="alignment-badge" data-alignment="${CardAlignment}">${CardAlignment}</dd>
+          </div>
+        </dl>
+
+        <section class="ability-panel" aria-labelledby="ability-title">
+          <p class="ability-panel__label">Ключевая способность</p>
+          <h2 id="ability-title">${CardAbility}</h2>
+          <p class="ability-panel__description">${CardDescription}</p>
+        </section>
+
+        <!-- <a class="edit-link" href="/admin/edit/${CardId}">
+          <span class="edit-link__icon" aria-hidden="true">✧</span>
+          Редактировать карточку
+        </a> -->
+      </div>
+    </article>
+  </main>
+</body>
+</html>

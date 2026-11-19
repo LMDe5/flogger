@@ -1,88 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A9A4F3F5-F029-8302-6665-D6B588668C4E}|HttpServer\\MiniHttpServer.csproj|c:\\users\\user\\documents\\github\\flogger\\semestrovaya\\httpserver\\minihttpserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A9A4F3F5-F029-8302-6665-D6B588668C4E}|HttpServer\\MiniHttpServer.csproj|solutionrelative:httpserver\\minihttpserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6410CCC-52A4-43D5-B63A-1B9C0AF4C5C6}|MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj|c:\\users\\user\\documents\\github\\flogger\\semestrovaya\\minihttpserver.orm.unittests\\minihttpserver.orm.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B6410CCC-52A4-43D5-B63A-1B9C0AF4C5C6}|MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj|solutionrelative:minihttpserver.orm.unittests\\minihttpserver.orm.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F0BD256-716E-41D4-9377-52BA41AB1697}|MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj|c:\\users\\user\\documents\\github\\flogger\\semestrovaya\\minihttpserver.framework.unittests\\minihttpserver.framework.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9F0BD256-716E-41D4-9377-52BA41AB1697}|MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj|solutionrelative:minihttpserver.framework.unittests\\minihttpserver.framework.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C21A5CFA-DDF7-4D3D-9F44-D074362E17C2}|HtmlTemplating.UnitTests\\HtmlTemplating.UnitTests.csproj|c:\\users\\user\\documents\\github\\flogger\\semestrovaya\\htmltemplating.unittests\\htmltemplating.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C21A5CFA-DDF7-4D3D-9F44-D074362E17C2}|HtmlTemplating.UnitTests\\HtmlTemplating.UnitTests.csproj|solutionrelative:htmltemplating.unittests\\htmltemplating.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MiniHttpServer.ORM.UnitTests",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj",
-              "RelativeDocumentMoniker": "MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj",
-              "RelativeToolTip": "MiniHttpServer.ORM.UnitTests\\MiniHttpServer.ORM.UnitTests.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-18T15:51:36.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MiniHttpServer.Framework.UnitTests.csproj",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj",
-              "RelativeDocumentMoniker": "MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj",
-              "RelativeToolTip": "MiniHttpServer.Framework.UnitTests\\MiniHttpServer.Framework.UnitTests.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-18T15:48:33.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HtmlTemplating.UnitTests.csproj",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\HtmlTemplating.UnitTests\\HtmlTemplating.UnitTests.csproj",
-              "RelativeDocumentMoniker": "HtmlTemplating.UnitTests\\HtmlTemplating.UnitTests.csproj",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\HtmlTemplating.UnitTests\\HtmlTemplating.UnitTests.csproj",
-              "RelativeToolTip": "HtmlTemplating.UnitTests\\HtmlTemplating.UnitTests.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-18T15:38:45.873Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MiniHttpServer.csproj",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\HttpServer\\MiniHttpServer.csproj",
-              "RelativeDocumentMoniker": "HttpServer\\MiniHttpServer.csproj",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\flogger\\Semestrovaya\\HttpServer\\MiniHttpServer.csproj",
-              "RelativeToolTip": "HttpServer\\MiniHttpServer.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-18T15:38:29.538Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
